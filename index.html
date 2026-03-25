@@ -19,7 +19,7 @@
             transition: all 0.2s ease;
         }
         
-        /* Grid forzado a 2 columnas en movil */
+        /* Grid de 2 columnas en móvil para ahorrar espacio */
         @media (max-width: 640px) {
             .compact-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -29,16 +29,17 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Estilo para el overlay de descripción */
+        /* Overlay de descripción con desenfoque */
         .description-overlay {
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(4px);
+            background-color: rgba(15, 23, 42, 0.95);
         }
     </style>
 </head>
 <body class="text-slate-900 pb-6">
 
-    <!-- Header Minimalista -->
-    <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
+    <!-- Header Oscuro -->
+    <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 h-12 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <span class="font-black text-[10px] md:text-xs tracking-widest uppercase text-slate-400">@diegoastein</span>
@@ -46,7 +47,7 @@
 
             <div class="flex items-center gap-2">
                 <button onclick="app.toggleEditMode()" class="p-2 hover:bg-slate-800 rounded-lg transition-colors">
-                    <i data-lucide="settings-2" class="w-4 h-4"></i>
+                    <i data-lucide="settings-2" class="w-4 h-4 text-slate-300"></i>
                 </button>
                 <button onclick="app.logout()" class="p-2 text-slate-500 hover:text-red-400">
                     <i data-lucide="power" class="w-4 h-4"></i>
@@ -55,10 +56,10 @@
         </div>
 
         <!-- Banner de Edición -->
-        <div id="edit-banner" class="hidden bg-indigo-600 px-4 py-1.5 flex justify-between items-center text-[9px] font-bold uppercase">
-            <span>Panel de Edición</span>
+        <div id="edit-banner" class="hidden bg-indigo-600 px-4 py-1.5 flex justify-between items-center text-[9px] font-bold uppercase text-white">
+            <span>Editor Activo</span>
             <div class="flex gap-4">
-                <button onclick="app.copyConfig()" class="flex items-center gap-1"><i data-lucide="copy" class="w-3 h-3"></i> Exportar</button>
+                <button onclick="app.copyConfig()" class="flex items-center gap-1 hover:underline"><i data-lucide="copy" class="w-3 h-3"></i> Exportar</button>
                 <button onclick="app.resetData()" class="opacity-70 hover:opacity-100">Reset</button>
             </div>
         </div>
@@ -78,42 +79,41 @@
         <!-- Estado Vacío -->
         <div id="empty-state" class="hidden py-20 text-center">
             <i data-lucide="search-x" class="w-10 h-10 mx-auto text-slate-300 mb-2"></i>
-            <p class="text-slate-400 text-xs font-bold uppercase">No hay proyectos aquí</p>
+            <p class="text-slate-400 text-xs font-bold uppercase">Sin proyectos</p>
         </div>
     </main>
 
     <!-- Notificación -->
-    <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-4 py-2 rounded-full text-[10px] font-bold opacity-0 transition-all z-[100] pointer-events-none shadow-xl">
-        Copiado al portapapeles
+    <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-indigo-700 text-white px-4 py-2 rounded-full text-[10px] font-bold opacity-0 transition-all z-[100] pointer-events-none shadow-2xl">
+        Configuración Copiada
     </div>
 
     <script>
         const initialData = {
           "username": "diegoastein",
           "repos": [
-            { "id": 1190596914, "name": "portfolio", "description": "portfolio", "url": "https://github.com/diegoastein/portfolio", "homepage": "https://diegoastein.github.io/portfolio/", "topics": ["General"], "isHidden": true },
-            { "id": 1117915849, "name": "PediApp", "description": "hc de consultorio pediátrico", "url": "https://github.com/diegoastein/pediapp", "homepage": "https://diegoastein.github.io/pediapp/", "topics": ["HC"], "isHidden": false },
-            { "id": 1178822966, "name": "Platita", "description": "control financiero básico", "url": "https://github.com/diegoastein/platita", "homepage": "https://diegoastein.github.io/platita/", "topics": ["finanzas"], "isHidden": false },
-            { "id": 1180247404, "name": "sorteoweb", "description": "gestor de sorteos por whatsapp", "url": "https://github.com/diegoastein/sorteoweb", "homepage": "https://diegoastein.github.io/sorteoweb/", "topics": ["General"], "isHidden": false },
-            { "id": 1181116050, "name": "hlbeta", "description": "beta de herramientas libres", "url": "https://github.com/diegoastein/hlbeta", "homepage": "https://diegoastein.github.io/hlbeta/", "topics": ["stock", "ventas"], "isHidden": false },
-            { "id": 1180398151, "name": "herramientaslibres", "description": "gestión de stock", "url": "https://github.com/diegoastein/herramientaslibres", "homepage": "https://diegoastein.github.io/herramientaslibres/", "topics": ["stock", "ventas"], "isHidden": false },
-            { "id": 1113252382, "name": "controldepagos", "description": "control de pagos", "url": "https://github.com/diegoastein/controldepagos", "homepage": "https://diegoastein.github.io/controldepagos/", "topics": ["uso interno"], "isHidden": false },
-            { "id": 1113983686, "name": "sanjuanneo", "description": "Uso interno del SJDD", "url": "https://github.com/diegoastein/sanjuanneo", "homepage": "https://diegoastein.github.io/sanjuanneo/", "topics": ["HC"], "isHidden": false },
-            { "id": 1100785733, "name": "registoconsul", "description": "Consultorio de Alto Riesgo", "url": "https://github.com/diegoastein/registoconsul", "homepage": "https://diegoastein.github.io/registoconsul/", "topics": ["HC"], "isHidden": false },
-            { "id": 1098206157, "name": "nacimientos2", "description": "registro de nacimientos", "url": "https://github.com/diegoastein/nacimientos2", "homepage": "https://diegoastein.github.io/nacimientos2/", "topics": ["General"], "isHidden": false },
-            { "id": 1093888442, "name": "Neointernacion", "description": "Web app de neo internación ", "url": "https://github.com/diegoastein/Neointernacion", "homepage": "https://diegoastein.github.io/Neointernacion/", "topics": ["HC"], "isHidden": false },
-            { "id": 1123333718, "name": "guardias2", "description": "anexo a guardias. Version lite", "url": "https://github.com/diegoastein/guardias2", "homepage": "https://diegoastein.github.io/guardias2/", "topics": ["uso interno"], "isHidden": false },
-            { "id": 1114435525, "name": "listadecompras", "description": "Lista de compras", "url": "https://github.com/diegoastein/listadecompras", "homepage": "https://diegoastein.github.io/listadecompras/", "topics": ["compras"], "isHidden": false },
-            { "id": 1111426472, "name": "guardias", "description": "manejo de las guardias externas", "url": "https://github.com/diegoastein/guardias", "homepage": "https://diegoastein.github.io/guardias/", "topics": ["uso interno"], "isHidden": false },
-            { "id": 1104721943, "name": "consolaweb", "description": "un rejunte de todo", "url": "https://github.com/diegoastein/consolaweb", "homepage": "https://diegoastein.github.io/consolaweb/", "topics": ["General"], "isHidden": true },
-            { "id": 1105264431, "name": "cardio", "description": "Estadísticas de cardio", "url": "https://github.com/diegoastein/cardio", "homepage": "https://diegoastein.github.io/cardio/", "topics": ["HC"], "isHidden": false },
-            { "id": 1105339931, "name": "Ecos", "description": "estadística de Ecografías", "url": "https://github.com/diegoastein/Ecos", "homepage": "https://diegoastein.github.io/Ecos/", "topics": ["HC"], "isHidden": false },
-            { "id": 1104132144, "name": "controlntp", "description": "Control de stock de NPT", "url": "https://github.com/diegoastein/controlntp", "homepage": "https://diegoastein.github.io/controlntp/", "topics": ["uso interno"], "isHidden": false },
-            { "id": 1106762310, "name": "neomonitorweb", "description": "web de difusión", "url": "https://github.com/diegoastein/neomonitorweb", "homepage": "https://diegoastein.github.io/neomonitorweb/", "topics": ["simulación"], "isHidden": false },
-            { "id": 1095261875, "name": "ConsultorioCaro", "description": "agenda consultorios", "url": "https://github.com/diegoastein/ConsultorioCaro", "homepage": "https://diegoastein.github.io/ConsultorioCaro/", "topics": ["HC"], "isHidden": false },
-            { "id": 1099448164, "name": "auditoria", "description": "auditoría", "url": "https://github.com/diegoastein/auditorianacimientos", "homepage": "https://diegoastein.github.io/auditorianacimientos/", "topics": ["HC"], "isHidden": false },
-            { "id": 1094967320, "name": "licencias", "description": "licencias", "url": "https://github.com/diegoastein/licenciasweb", "homepage": "https://diegoastein.github.io/licenciasweb/", "topics": ["uso interno"], "isHidden": false },
-            { "id": 1103359754, "name": "Turnos", "description": "gestión de turnos", "url": "https://github.com/diegoastein/Consultorios", "homepage": "https://diegoastein.github.io/Consultorios/", "topics": ["HC"], "isHidden": false }
+            { "id": 1190596914, "name": "portfolio", "description": "Este mismo sitio web", "url": "https://github.com/diegoastein/portfolio", "homepage": "https://diegoastein.github.io/portfolio/", "topics": ["General"], "isHidden": true },
+            { "id": 1117915849, "name": "PediApp", "description": "HC de consultorio pediátrico profesional", "url": "https://github.com/diegoastein/pediapp", "homepage": "https://diegoastein.github.io/pediapp/", "topics": ["HC"], "isHidden": false },
+            { "id": 1178822966, "name": "Platita", "description": "Control de finanzas personales simplificado", "url": "https://github.com/diegoastein/platita", "homepage": "https://diegoastein.github.io/platita/", "topics": ["finanzas"], "isHidden": false },
+            { "id": 1180247404, "name": "sorteoweb", "description": "Gestor de sorteos para enviar por WhatsApp", "url": "https://github.com/diegoastein/sorteoweb", "homepage": "https://diegoastein.github.io/sorteoweb/", "topics": ["General"], "isHidden": false },
+            { "id": 1181116050, "name": "hlbeta", "description": "Versión beta del sistema de gestión comercial", "url": "https://github.com/diegoastein/hlbeta", "homepage": "https://diegoastein.github.io/hlbeta/", "topics": ["stock", "ventas"], "isHidden": false },
+            { "id": 1180398151, "name": "herramientaslibres", "description": "Gestión integral de stock y proveedores", "url": "https://github.com/diegoastein/herramientaslibres", "homepage": "https://diegoastein.github.io/herramientaslibres/", "topics": ["stock", "ventas"], "isHidden": false },
+            { "id": 1113252382, "name": "controldepagos", "description": "Sistema interno para control de cobros", "url": "https://github.com/diegoastein/controldepagos", "homepage": "https://diegoastein.github.io/controldepagos/", "topics": ["uso interno"], "isHidden": false },
+            { "id": 1113983686, "name": "sanjuanneo", "description": "Herramienta interna para SJDD Neonatología", "url": "https://github.com/diegoastein/sanjuanneo", "homepage": "https://diegoastein.github.io/sanjuanneo/", "topics": ["HC"], "isHidden": false },
+            { "id": 1100785733, "name": "registoconsul", "description": "Registro de consultorio de alto riesgo", "url": "https://github.com/diegoastein/registoconsul", "homepage": "https://diegoastein.github.io/registoconsul/", "topics": ["HC"], "isHidden": false },
+            { "id": 1098206157, "name": "nacimientos2", "description": "Registro oficial de nacimientos", "url": "https://github.com/diegoastein/nacimientos2", "homepage": "https://diegoastein.github.io/nacimientos2/", "topics": ["General"], "isHidden": false },
+            { "id": 1093888442, "name": "Neointernacion", "description": "App para gestión de neonatos internados", "url": "https://github.com/diegoastein/Neointernacion", "homepage": "https://diegoastein.github.io/Neointernacion/", "topics": ["HC"], "isHidden": false },
+            { "id": 1123333718, "name": "guardias2", "description": "Gestión lite de guardias médicas", "url": "https://github.com/diegoastein/guardias2", "homepage": "https://diegoastein.github.io/guardias2/", "topics": ["uso interno"], "isHidden": false },
+            { "id": 1114435525, "name": "listadecompras", "description": "Organizador de compras domésticas", "url": "https://github.com/diegoastein/listadecompras", "homepage": "https://diegoastein.github.io/listadecompras/", "topics": ["compras"], "isHidden": false },
+            { "id": 1111426472, "name": "guardias", "description": "Manejo centralizado de guardias externas", "url": "https://github.com/diegoastein/guardias", "homepage": "https://diegoastein.github.io/guardias/", "topics": ["uso interno"], "isHidden": false },
+            { "id": 1105264431, "name": "cardio", "description": "Estadísticas de cardiología pediátrica", "url": "https://github.com/diegoastein/cardio", "homepage": "https://diegoastein.github.io/cardio/", "topics": ["HC"], "isHidden": false },
+            { "id": 1105339931, "name": "Ecos", "description": "Registro estadístico de ecografías", "url": "https://github.com/diegoastein/Ecos", "homepage": "https://diegoastein.github.io/Ecos/", "topics": ["HC"], "isHidden": false },
+            { "id": 1104132144, "name": "controlntp", "description": "Inventario de Nutrición Parenteral", "url": "https://github.com/diegoastein/controlntp", "homepage": "https://diegoastein.github.io/controlntp/", "topics": ["uso interno"], "isHidden": false },
+            { "id": 1106762310, "name": "neomonitorweb", "description": "Landing page de NeoMonitor Pro", "url": "https://github.com/diegoastein/neomonitorweb", "homepage": "https://diegoastein.github.io/neomonitorweb/", "topics": ["simulación"], "isHidden": false },
+            { "id": 1095261875, "name": "ConsultorioCaro", "description": "Agenda y turnos para consultorios", "url": "https://github.com/diegoastein/ConsultorioCaro", "homepage": "https://diegoastein.github.io/ConsultorioCaro/", "topics": ["HC"], "isHidden": false },
+            { "id": 1099448164, "name": "auditoria", "description": "Módulo de auditoría de nacimientos", "url": "https://github.com/diegoastein/auditorianacimientos", "homepage": "https://diegoastein.github.io/auditorianacimientos/", "topics": ["HC"], "isHidden": false },
+            { "id": 1094967320, "name": "licencias", "description": "Gestión de licencias médicas", "url": "https://github.com/diegoastein/licenciasweb", "homepage": "https://diegoastein.github.io/licenciasweb/", "topics": ["uso interno"], "isHidden": false },
+            { "id": 1103359754, "name": "Turnos", "description": "Gestor de turnos rápido", "url": "https://github.com/diegoastein/Consultorios", "homepage": "https://diegoastein.github.io/Consultorios/", "topics": ["HC"], "isHidden": false }
           ]
         };
 
@@ -123,19 +123,20 @@
             editMode: false,
             filter: 'Todos',
 
-            getIcon(topics) {
+            // Paleta neutra por categoría
+            getStyle(topics) {
                 const t = topics.map(x => x.toLowerCase());
-                if (t.includes('hc')) return 'heart-pulse';
-                if (t.includes('stock') || t.includes('ventas')) return 'package';
-                if (t.includes('finanzas')) return 'banknote';
-                if (t.includes('uso interno')) return 'lock';
-                if (t.includes('compras')) return 'shopping-cart';
-                if (t.includes('simulación')) return 'activity';
-                return 'code-2';
+                if (t.includes('hc')) return { icon: 'heart-pulse', bg: 'bg-stone-100', border: 'border-stone-300' };
+                if (t.includes('stock') || t.includes('ventas')) return { icon: 'package', bg: 'bg-slate-100', border: 'border-slate-300' };
+                if (t.includes('finanzas')) return { icon: 'banknote', bg: 'bg-zinc-100', border: 'border-zinc-300' };
+                if (t.includes('uso interno')) return { icon: 'lock', bg: 'bg-neutral-100', border: 'border-neutral-300' };
+                if (t.includes('compras')) return { icon: 'shopping-cart', bg: 'bg-gray-100', border: 'border-gray-300' };
+                if (t.includes('simulación')) return { icon: 'activity', bg: 'bg-blue-50', border: 'border-blue-200' };
+                return { icon: 'code-2', bg: 'bg-white', border: 'border-slate-200' };
             },
 
             init() {
-                const saved = localStorage.getItem('diego_compact_v5');
+                const saved = localStorage.getItem('diego_compact_v6');
                 this.repos = saved ? JSON.parse(saved).repos : initialData.repos;
                 this.render();
                 lucide.createIcons();
@@ -149,7 +150,7 @@
                 this.repos.forEach(r => { if (!r.isHidden || this.editMode) r.topics.forEach(t => cats.add(t)); });
                 
                 filters.innerHTML = Array.from(cats).map(cat => `
-                    <button onclick="app.setFilter('${cat}')" class="px-2 py-1 rounded text-[8px] font-black uppercase tracking-widest transition-all ${this.filter === cat ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-400 hover:bg-slate-200'}">
+                    <button onclick="app.setFilter('${cat}')" class="px-2.5 py-1 rounded text-[8px] font-black uppercase tracking-widest transition-all ${this.filter === cat ? 'bg-slate-900 text-white shadow-lg' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}">
                         ${cat}
                     </button>
                 `).join('');
@@ -160,18 +161,18 @@
                 });
 
                 grid.innerHTML = filtered.map(repo => {
-                    const icon = this.getIcon(repo.topics);
+                    const style = this.getStyle(repo.topics);
                     return `
-                    <div class="project-card group flex flex-col bg-white border border-slate-200 rounded-lg overflow-hidden relative ${repo.isHidden ? 'opacity-30' : ''}">
+                    <div class="project-card group flex flex-col ${style.bg} border ${style.border} rounded-lg overflow-hidden relative shadow-sm ${repo.isHidden ? 'opacity-30' : ''}">
                         
-                        <!-- Contenido Superior (Título e Icono) con Hover -->
+                        <!-- Contenido -->
                         <div class="relative p-3 flex-1 flex flex-col">
                             <div class="flex justify-between items-start mb-2">
-                                <div class="p-1.5 bg-slate-50 border border-slate-100 rounded">
-                                    <i data-lucide="${icon}" class="w-3.5 h-3.5 text-slate-400"></i>
+                                <div class="p-1.5 bg-white border border-white rounded shadow-sm">
+                                    <i data-lucide="${style.icon}" class="w-3.5 h-3.5 text-slate-500"></i>
                                 </div>
                                 ${this.editMode ? `
-                                    <button onclick="app.toggleHide(${repo.id})" class="text-slate-300 hover:text-indigo-600 transition-colors relative z-20">
+                                    <button onclick="app.toggleHide(${repo.id})" class="text-slate-400 hover:text-indigo-600 transition-colors z-20">
                                         <i data-lucide="${repo.isHidden ? 'eye' : 'eye-off'}" class="w-3.5 h-3.5"></i>
                                     </button>
                                 ` : ''}
@@ -180,34 +181,34 @@
                             <h3 class="font-black text-[10px] uppercase leading-tight tracking-tight mb-1 truncate" title="${repo.name}">${repo.name}</h3>
                             
                             ${this.editMode ? `
-                                <div class="space-y-1.5 mt-1 relative z-20">
+                                <div class="space-y-1.5 mt-1 z-20">
                                     <input onchange="app.updateField(${repo.id}, 'name', this.value)" value="${repo.name}" class="w-full text-[9px] border-b border-indigo-200 outline-none bg-transparent">
-                                    <input onchange="app.updateField(${repo.id}, 'topics', this.value)" value="${repo.topics.join(', ')}" class="w-full text-[8px] text-indigo-600 bg-indigo-50 px-1 rounded">
+                                    <input onchange="app.updateField(${repo.id}, 'topics', this.value)" value="${repo.topics.join(', ')}" class="w-full text-[8px] text-indigo-700 bg-indigo-100/50 px-1 rounded">
                                 </div>
                             ` : `
                                 <div class="flex flex-wrap gap-1 mt-1 mb-2">
-                                    ${repo.topics.map(t => `<span class="text-[7px] font-bold text-indigo-600 bg-indigo-50/50 px-1 rounded uppercase tracking-tighter">${t}</span>`).join('')}
+                                    ${repo.topics.map(t => `<span class="text-[7px] font-bold text-indigo-800 bg-indigo-100/50 px-1 rounded border border-indigo-100 uppercase tracking-tighter">${t}</span>`).join('')}
                                 </div>
                             `}
 
-                            <!-- Overlay de Descripción (Solo se muestra al pasar el mouse/tocar) -->
+                            <!-- Overlay de Descripción (Hover en Escritorio / Tap en Móvil) -->
                             ${!this.editMode ? `
-                                <div class="description-overlay absolute inset-0 bg-slate-900/95 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col justify-center items-center text-center z-10">
-                                    <p class="text-white text-[9px] font-medium leading-tight">${repo.description}</p>
+                                <div class="description-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center z-10 p-3">
+                                    <p class="text-white text-[9px] font-bold leading-tight px-1">${repo.description}</p>
                                 </div>
                             ` : ''}
                         </div>
 
-                        <!-- Botones de Acción (Siempre visibles en la base) -->
-                        <div class="flex gap-1 p-2 bg-slate-50/50 border-t border-slate-100 relative z-20">
+                        <!-- Botones de Acción -->
+                        <div class="flex gap-1 p-2 bg-black/5 border-t border-black/5 z-20">
                             ${repo.homepage ? `
-                                <a href="${repo.homepage}" target="_blank" rel="noopener" class="flex-1 bg-white text-slate-900 text-[9px] font-bold py-1.5 rounded border border-slate-200 text-center hover:bg-slate-100 transition-colors uppercase tracking-tighter shadow-sm">Web</a>
+                                <a href="${repo.homepage}" target="_blank" rel="noopener" class="flex-1 bg-white text-slate-900 text-[9px] font-bold py-1.5 rounded border border-slate-300 text-center hover:bg-slate-50 active:bg-slate-100 transition-colors uppercase tracking-tighter shadow-sm">Web</a>
                             ` : `
-                                <div class="flex-1 bg-slate-100/50 text-slate-300 text-[8px] font-bold py-1.5 rounded text-center uppercase tracking-tighter">Off</div>
+                                <div class="flex-1 bg-black/5 text-slate-400 text-[8px] font-bold py-1.5 rounded text-center uppercase tracking-tighter italic">Local</div>
                             `}
                             
-                            <a href="${repo.url}" target="_blank" rel="noopener" class="px-2 bg-slate-800 text-white rounded flex items-center justify-center hover:bg-black transition-colors shadow-sm" title="Ver Código">
-                                <i data-lucide="github" class="w-3 h-3"></i>
+                            <a href="${repo.url}" target="_blank" rel="noopener" class="px-2.5 bg-slate-800 text-white rounded flex items-center justify-center hover:bg-black transition-colors shadow-lg" title="Ver Código">
+                                <i data-lucide="github" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
                     </div>
@@ -226,7 +227,7 @@
                 else r[field] = val;
                 this.save(); 
             },
-            save() { localStorage.setItem('diego_compact_v5', JSON.stringify({ username: this.username, repos: this.repos })); },
+            save() { localStorage.setItem('diego_compact_v6', JSON.stringify({ username: this.username, repos: this.repos })); },
             copyConfig() {
                 const text = JSON.stringify({ username: this.username, repos: this.repos }, null, 2);
                 navigator.clipboard.writeText(text).then(() => {
@@ -235,8 +236,8 @@
                     setTimeout(() => t.classList.add('opacity-0'), 2000);
                 });
             },
-            resetData() { if(confirm('¿Restaurar configuración original?')) { this.repos = initialData.repos; this.save(); this.render(); } },
-            logout() { if(confirm('¿Cerrar sesión?')) { localStorage.removeItem('diego_compact_v5'); location.reload(); } }
+            resetData() { if(confirm('¿Restaurar?')) { this.repos = initialData.repos; this.save(); this.render(); } },
+            logout() { if(confirm('¿Cerrar sesión?')) { localStorage.removeItem('diego_compact_v6'); location.reload(); } }
         };
 
         window.onload = () => app.init();
