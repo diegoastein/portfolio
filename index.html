@@ -19,7 +19,7 @@
             transition: all 0.2s ease;
         }
         
-        /* Grid de 2 columnas en móvil para ahorrar espacio */
+        /* Grid de 2 columnas en móvil y 3 en desktop */
         @media (max-width: 640px) {
             .compact-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -70,9 +70,9 @@
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-2 md:px-4 pt-4">
-        <!-- Grid de Proyectos -->
-        <div id="projects-grid" class="grid compact-grid sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 md:gap-4">
+    <main class="max-w-5xl mx-auto px-2 md:px-4 pt-4">
+        <!-- Grid de Proyectos: 2 en movil, 3 en desktop -->
+        <div id="projects-grid" class="grid compact-grid sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
             <!-- Inyectado -->
         </div>
 
@@ -123,15 +123,15 @@
             editMode: false,
             filter: 'Todos',
 
-            // Paleta neutra por categoría
+            // Paleta neutra distintiva por categoría
             getStyle(topics) {
                 const t = topics.map(x => x.toLowerCase());
-                if (t.includes('hc')) return { icon: 'heart-pulse', bg: 'bg-stone-100', border: 'border-stone-300' };
-                if (t.includes('stock') || t.includes('ventas')) return { icon: 'package', bg: 'bg-slate-100', border: 'border-slate-300' };
-                if (t.includes('finanzas')) return { icon: 'banknote', bg: 'bg-zinc-100', border: 'border-zinc-300' };
-                if (t.includes('uso interno')) return { icon: 'lock', bg: 'bg-neutral-100', border: 'border-neutral-300' };
-                if (t.includes('compras')) return { icon: 'shopping-cart', bg: 'bg-gray-100', border: 'border-gray-300' };
-                if (t.includes('simulación')) return { icon: 'activity', bg: 'bg-blue-50', border: 'border-blue-200' };
+                if (t.includes('hc')) return { icon: 'heart-pulse', bg: 'bg-rose-50/70', border: 'border-rose-200' };
+                if (t.includes('stock') || t.includes('ventas')) return { icon: 'package', bg: 'bg-sky-50/70', border: 'border-sky-200' };
+                if (t.includes('finanzas')) return { icon: 'banknote', bg: 'bg-emerald-50/70', border: 'border-emerald-200' };
+                if (t.includes('uso interno')) return { icon: 'lock', bg: 'bg-amber-50/70', border: 'border-amber-200' };
+                if (t.includes('compras')) return { icon: 'shopping-cart', bg: 'bg-orange-50/70', border: 'border-orange-200' };
+                if (t.includes('simulación')) return { icon: 'activity', bg: 'bg-indigo-50/70', border: 'border-indigo-200' };
                 return { icon: 'code-2', bg: 'bg-white', border: 'border-slate-200' };
             },
 
@@ -183,11 +183,11 @@
                             ${this.editMode ? `
                                 <div class="space-y-1.5 mt-1 z-20">
                                     <input onchange="app.updateField(${repo.id}, 'name', this.value)" value="${repo.name}" class="w-full text-[9px] border-b border-indigo-200 outline-none bg-transparent">
-                                    <input onchange="app.updateField(${repo.id}, 'topics', this.value)" value="${repo.topics.join(', ')}" class="w-full text-[8px] text-indigo-700 bg-indigo-100/50 px-1 rounded">
+                                    <input onchange="app.updateField(${repo.id}, 'topics', this.value)" value="${repo.topics.join(', ')}" class="w-full text-[8px] text-indigo-700 bg-white/50 px-1 rounded">
                                 </div>
                             ` : `
                                 <div class="flex flex-wrap gap-1 mt-1 mb-2">
-                                    ${repo.topics.map(t => `<span class="text-[7px] font-bold text-indigo-800 bg-indigo-100/50 px-1 rounded border border-indigo-100 uppercase tracking-tighter">${t}</span>`).join('')}
+                                    ${repo.topics.map(t => `<span class="text-[7px] font-bold text-slate-800 bg-white/40 px-1 rounded border border-white/60 uppercase tracking-tighter">${t}</span>`).join('')}
                                 </div>
                             `}
 
