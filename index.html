@@ -11,7 +11,7 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9;
+            background-color: #f8fafc;
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -32,88 +32,113 @@
         /* Overlay de descripción con desenfoque */
         .description-overlay {
             backdrop-filter: blur(4px);
-            background-color: rgba(15, 23, 42, 0.95);
+            background-color: rgba(15, 23, 42, 0.9);
         }
     </style>
 </head>
-<body class="text-slate-900 pb-6">
+<body class="text-slate-900 pb-12">
 
-    <!-- Header Oscuro -->
+    <!-- Header Principal -->
     <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 h-12 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <span class="font-black text-[10px] md:text-xs tracking-widest uppercase text-slate-400">@diegoastein</span>
+        <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-2 shrink-0">
+                <div class="bg-indigo-500 p-1.5 rounded-lg shadow-lg">
+                    <i data-lucide="layout-grid" class="text-white w-4 h-4"></i>
+                </div>
+                <span class="font-black text-xs md:text-sm tracking-widest uppercase text-white">@diegoastein</span>
             </div>
 
-            <div class="flex items-center gap-2">
-                <button onclick="app.toggleEditMode()" class="p-2 hover:bg-slate-800 rounded-lg transition-colors">
-                    <i data-lucide="settings-2" class="w-4 h-4 text-slate-300"></i>
-                </button>
-                <button onclick="app.logout()" class="p-2 text-slate-500 hover:text-red-400">
-                    <i data-lucide="power" class="w-4 h-4"></i>
+            <!-- Buscador Central -->
+            <div class="relative flex-1 max-w-xs">
+                <i data-lucide="search" class="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-500"></i>
+                <input 
+                    type="text" 
+                    id="search-input"
+                    oninput="app.render()"
+                    placeholder="Buscar proyecto..."
+                    class="w-full bg-slate-800 border-none rounded-lg py-1.5 pl-8 pr-3 text-xs text-white placeholder-slate-500 focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                >
+            </div>
+
+            <div class="flex items-center gap-1 shrink-0">
+                <button onclick="app.toggleEditMode()" class="p-2 hover:bg-slate-800 rounded-lg transition-colors group" title="Configurar">
+                    <i data-lucide="settings-2" class="w-4 h-4 text-slate-400 group-hover:text-white"></i>
                 </button>
             </div>
         </div>
 
         <!-- Banner de Edición -->
-        <div id="edit-banner" class="hidden bg-indigo-600 px-4 py-1.5 flex justify-between items-center text-[9px] font-bold uppercase text-white">
-            <span>Editor Activo</span>
+        <div id="edit-banner" class="hidden bg-indigo-600 px-4 py-1.5 flex justify-between items-center text-[10px] font-bold uppercase text-white">
+            <div class="flex items-center gap-2">
+                <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                <span>Modo de personalización activo</span>
+            </div>
             <div class="flex gap-4">
-                <button onclick="app.copyConfig()" class="flex items-center gap-1 hover:underline"><i data-lucide="copy" class="w-3 h-3"></i> Exportar</button>
-                <button onclick="app.resetData()" class="opacity-70 hover:opacity-100">Reset</button>
+                <button onclick="app.copyConfig()" class="flex items-center gap-1 hover:underline"><i data-lucide="copy" class="w-3 h-3"></i> Exportar JSON</button>
+                <button onclick="app.resetData()" class="text-indigo-200 hover:text-white">Reiniciar</button>
             </div>
         </div>
 
-        <!-- Filtros Compactos -->
-        <div id="category-filters" class="flex flex-wrap gap-1 bg-white border-b border-slate-200 px-4 py-2">
-            <!-- Inyectado -->
+        <!-- Filtros Rápidos -->
+        <div id="category-filters" class="flex flex-wrap gap-1.5 bg-white border-b border-slate-200 px-4 py-2.5 shadow-sm">
+            <!-- Inyectado dinámicamente -->
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-2 md:px-4 pt-4">
-        <!-- Grid de Proyectos: 2 en movil, 3 en desktop -->
-        <div id="projects-grid" class="grid compact-grid sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
-            <!-- Inyectado -->
+    <main class="max-w-5xl mx-auto px-3 md:px-4 pt-8">
+        
+        <!-- Intro Section -->
+        <div class="mb-10 text-center md:text-left">
+            <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-none mb-3">Mis Proyectos</h1>
+            <p class="text-slate-500 text-sm md:text-lg max-w-2xl font-medium leading-relaxed">
+                Una recopilación de herramientas personalizadas, aplicaciones médicas y sistemas de gestión desarrollados para optimizar el flujo de trabajo diario.
+            </p>
+        </div>
+
+        <!-- Grid de Proyectos: 2 en móvil, 3 en escritorio -->
+        <div id="projects-grid" class="grid compact-grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
+            <!-- Inyectado dinámicamente -->
         </div>
 
         <!-- Estado Vacío -->
-        <div id="empty-state" class="hidden py-20 text-center">
-            <i data-lucide="search-x" class="w-10 h-10 mx-auto text-slate-300 mb-2"></i>
-            <p class="text-slate-400 text-xs font-bold uppercase">Sin proyectos</p>
+        <div id="empty-state" class="hidden py-32 text-center bg-white rounded-2xl border-2 border-dashed border-slate-200 mt-10">
+            <i data-lucide="folder-search" class="w-12 h-12 mx-auto text-slate-200 mb-3"></i>
+            <p class="text-slate-400 text-sm font-bold uppercase tracking-widest">No se encontraron resultados</p>
+            <button onclick="document.getElementById('search-input').value=''; app.render()" class="mt-4 text-indigo-600 font-bold text-xs uppercase hover:underline">Limpiar búsqueda</button>
         </div>
     </main>
 
-    <!-- Notificación -->
-    <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-indigo-700 text-white px-4 py-2 rounded-full text-[10px] font-bold opacity-0 transition-all z-[100] pointer-events-none shadow-2xl">
-        Configuración Copiada
+    <!-- Notificación Floatante -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-indigo-700 text-white px-6 py-3 rounded-full text-xs font-bold opacity-0 transition-all z-[100] pointer-events-none shadow-2xl">
+        Configuración copiada al portapapeles
     </div>
 
     <script>
         const initialData = {
           "username": "diegoastein",
           "repos": [
-            { "id": 1190596914, "name": "portfolio", "description": "Este mismo sitio web", "url": "https://github.com/diegoastein/portfolio", "homepage": "https://diegoastein.github.io/portfolio/", "topics": ["General"], "isHidden": true },
-            { "id": 1117915849, "name": "PediApp", "description": "HC de consultorio pediátrico profesional", "url": "https://github.com/diegoastein/pediapp", "homepage": "https://diegoastein.github.io/pediapp/", "topics": ["HC"], "isHidden": false },
-            { "id": 1178822966, "name": "Platita", "description": "Control de finanzas personales simplificado", "url": "https://github.com/diegoastein/platita", "homepage": "https://diegoastein.github.io/platita/", "topics": ["finanzas"], "isHidden": false },
-            { "id": 1180247404, "name": "sorteoweb", "description": "Gestor de sorteos para enviar por WhatsApp", "url": "https://github.com/diegoastein/sorteoweb", "homepage": "https://diegoastein.github.io/sorteoweb/", "topics": ["General"], "isHidden": false },
-            { "id": 1181116050, "name": "hlbeta", "description": "Versión beta del sistema de gestión comercial", "url": "https://github.com/diegoastein/hlbeta", "homepage": "https://diegoastein.github.io/hlbeta/", "topics": ["stock", "ventas"], "isHidden": false },
-            { "id": 1180398151, "name": "herramientaslibres", "description": "Gestión integral de stock y proveedores", "url": "https://github.com/diegoastein/herramientaslibres", "homepage": "https://diegoastein.github.io/herramientaslibres/", "topics": ["stock", "ventas"], "isHidden": false },
-            { "id": 1113252382, "name": "controldepagos", "description": "Sistema interno para control de cobros", "url": "https://github.com/diegoastein/controldepagos", "homepage": "https://diegoastein.github.io/controldepagos/", "topics": ["uso interno"], "isHidden": false },
-            { "id": 1113983686, "name": "sanjuanneo", "description": "Herramienta interna para SJDD Neonatología", "url": "https://github.com/diegoastein/sanjuanneo", "homepage": "https://diegoastein.github.io/sanjuanneo/", "topics": ["HC"], "isHidden": false },
-            { "id": 1100785733, "name": "registoconsul", "description": "Registro de consultorio de alto riesgo", "url": "https://github.com/diegoastein/registoconsul", "homepage": "https://diegoastein.github.io/registoconsul/", "topics": ["HC"], "isHidden": false },
-            { "id": 1098206157, "name": "nacimientos2", "description": "Registro oficial de nacimientos", "url": "https://github.com/diegoastein/nacimientos2", "homepage": "https://diegoastein.github.io/nacimientos2/", "topics": ["General"], "isHidden": false },
-            { "id": 1093888442, "name": "Neointernacion", "description": "App para gestión de neonatos internados", "url": "https://github.com/diegoastein/Neointernacion", "homepage": "https://diegoastein.github.io/Neointernacion/", "topics": ["HC"], "isHidden": false },
-            { "id": 1123333718, "name": "guardias2", "description": "Gestión lite de guardias médicas", "url": "https://github.com/diegoastein/guardias2", "homepage": "https://diegoastein.github.io/guardias2/", "topics": ["uso interno"], "isHidden": false },
-            { "id": 1114435525, "name": "listadecompras", "description": "Organizador de compras domésticas", "url": "https://github.com/diegoastein/listadecompras", "homepage": "https://diegoastein.github.io/listadecompras/", "topics": ["compras"], "isHidden": false },
-            { "id": 1111426472, "name": "guardias", "description": "Manejo centralizado de guardias externas", "url": "https://github.com/diegoastein/guardias", "homepage": "https://diegoastein.github.io/guardias/", "topics": ["uso interno"], "isHidden": false },
-            { "id": 1105264431, "name": "cardio", "description": "Estadísticas de cardiología pediátrica", "url": "https://github.com/diegoastein/cardio", "homepage": "https://diegoastein.github.io/cardio/", "topics": ["HC"], "isHidden": false },
-            { "id": 1105339931, "name": "Ecos", "description": "Registro estadístico de ecografías", "url": "https://github.com/diegoastein/Ecos", "homepage": "https://diegoastein.github.io/Ecos/", "topics": ["HC"], "isHidden": false },
-            { "id": 1104132144, "name": "controlntp", "description": "Inventario de Nutrición Parenteral", "url": "https://github.com/diegoastein/controlntp", "homepage": "https://diegoastein.github.io/controlntp/", "topics": ["uso interno"], "isHidden": false },
-            { "id": 1106762310, "name": "neomonitorweb", "description": "Landing page de NeoMonitor Pro", "url": "https://github.com/diegoastein/neomonitorweb", "homepage": "https://diegoastein.github.io/neomonitorweb/", "topics": ["simulación"], "isHidden": false },
-            { "id": 1095261875, "name": "ConsultorioCaro", "description": "Agenda y turnos para consultorios", "url": "https://github.com/diegoastein/ConsultorioCaro", "homepage": "https://diegoastein.github.io/ConsultorioCaro/", "topics": ["HC"], "isHidden": false },
-            { "id": 1099448164, "name": "auditoria", "description": "Módulo de auditoría de nacimientos", "url": "https://github.com/diegoastein/auditorianacimientos", "homepage": "https://diegoastein.github.io/auditorianacimientos/", "topics": ["HC"], "isHidden": false },
-            { "id": 1094967320, "name": "licencias", "description": "Gestión de licencias médicas", "url": "https://github.com/diegoastein/licenciasweb", "homepage": "https://diegoastein.github.io/licenciasweb/", "topics": ["uso interno"], "isHidden": false },
-            { "id": 1103359754, "name": "Turnos", "description": "Gestor de turnos rápido", "url": "https://github.com/diegoastein/Consultorios", "homepage": "https://diegoastein.github.io/Consultorios/", "topics": ["HC"], "isHidden": false }
+            { "id": 1190596914, "name": "Portfolio", "description": "Este mismo sitio web que centraliza todos mis proyectos.", "url": "https://github.com/diegoastein/portfolio", "homepage": "https://diegoastein.github.io/portfolio/", "topics": ["General"], "isHidden": true },
+            { "id": 1117915849, "name": "PediApp", "description": "Historia Clínica Digital para consultorios pediátricos con foco en la agilidad.", "url": "https://github.com/diegoastein/pediapp", "homepage": "https://diegoastein.github.io/pediapp/", "topics": ["HC"], "isHidden": false },
+            { "id": 1178822966, "name": "Platita", "description": "Gestor financiero básico para el control de ingresos y egresos personales.", "url": "https://github.com/diegoastein/platita", "homepage": "https://diegoastein.github.io/platita/", "topics": ["finanzas"], "isHidden": false },
+            { "id": 1180247404, "name": "sorteoweb", "description": "Herramienta para realizar sorteos rápidos y compartir resultados vía WhatsApp.", "url": "https://github.com/diegoastein/sorteoweb", "homepage": "https://diegoastein.github.io/sorteoweb/", "topics": ["General"], "isHidden": false },
+            { "id": 1181116050, "name": "hlbeta", "description": "Versión en desarrollo del sistema de herramientas comerciales libres.", "url": "https://github.com/diegoastein/hlbeta", "homepage": "https://diegoastein.github.io/hlbeta/", "topics": ["stock", "ventas"], "isHidden": false },
+            { "id": 1180398151, "name": "herramientaslibres", "description": "Sistema robusto de gestión de stock, ventas y proveedores.", "url": "https://github.com/diegoastein/herramientaslibres", "homepage": "https://diegoastein.github.io/herramientaslibres/", "topics": ["stock", "ventas"], "isHidden": false },
+            { "id": 1113252382, "name": "controldepagos", "description": "Micro-herramienta para el seguimiento de cobros internos.", "url": "https://github.com/diegoastein/controldepagos", "homepage": "https://diegoastein.github.io/controldepagos/", "topics": ["uso interno"], "isHidden": false },
+            { "id": 1113983686, "name": "sanjuanneo", "description": "Dashboard clínico específico para el Servicio de Neonatología del SJDD.", "url": "https://github.com/diegoastein/sanjuanneo", "homepage": "https://diegoastein.github.io/sanjuanneo/", "topics": ["HC"], "isHidden": false },
+            { "id": 1100785733, "name": "registoconsul", "description": "Registro estructurado para el Consultorio de Seguimiento de Alto Riesgo.", "url": "https://github.com/diegoastein/registoconsul", "homepage": "https://diegoastein.github.io/registoconsul/", "topics": ["HC"], "isHidden": false },
+            { "id": 1098206157, "name": "nacimientos2", "description": "Base de datos simplificada para el registro de nacimientos asistidos.", "url": "https://github.com/diegoastein/nacimientos2", "homepage": "https://diegoastein.github.io/nacimientos2/", "topics": ["General"], "isHidden": false },
+            { "id": 1093888442, "name": "Neointernacion", "description": "Gestión integral de pacientes en unidades de terapia intensiva neonatal.", "url": "https://github.com/diegoastein/Neointernacion", "homepage": "https://diegoastein.github.io/Neointernacion/", "topics": ["HC"], "isHidden": false },
+            { "id": 1123333718, "name": "guardias2", "description": "Planificador de guardias médicas con interfaz optimizada para móviles.", "url": "https://github.com/diegoastein/guardias2", "homepage": "https://diegoastein.github.io/guardias2/", "topics": ["uso interno"], "isHidden": false },
+            { "id": 1114435525, "name": "listadecompras", "description": "Lista colaborativa dinámica para suministros y compras domésticas.", "url": "https://github.com/diegoastein/listadecompras", "homepage": "https://diegoastein.github.io/listadecompras/", "topics": ["compras"], "isHidden": false },
+            { "id": 1111426472, "name": "guardias", "description": "Panel centralizado para el manejo de cronogramas de guardias externas.", "url": "https://github.com/diegoastein/guardias", "homepage": "https://diegoastein.github.io/guardias/", "topics": ["uso interno"], "isHidden": false },
+            { "id": 1105264431, "name": "cardio", "description": "Módulo de estadísticas y seguimiento de cardiología infantil.", "url": "https://github.com/diegoastein/cardio", "homepage": "https://diegoastein.github.io/cardio/", "topics": ["HC"], "isHidden": false },
+            { "id": 1105339931, "name": "Ecos", "description": "Sistema de carga y análisis de datos ecográficos.", "url": "https://github.com/diegoastein/Ecos", "homepage": "https://diegoastein.github.io/Ecos/", "topics": ["HC"], "isHidden": false },
+            { "id": 1104132144, "name": "controlntp", "description": "Stock y trazabilidad de Nutrición Parenteral Total.", "url": "https://github.com/diegoastein/controlntp", "homepage": "https://diegoastein.github.io/controlntp/", "topics": ["uso interno"], "isHidden": false },
+            { "id": 1106762310, "name": "neomonitorweb", "description": "Página de presentación para el simulador NeoMonitor Pro.", "url": "https://github.com/diegoastein/neomonitorweb", "homepage": "https://diegoastein.github.io/neomonitorweb/", "topics": ["simulación"], "isHidden": false },
+            { "id": 1095261875, "name": "ConsultorioCaro", "description": "Plataforma de turnos y agenda para especialistas.", "url": "https://github.com/diegoastein/ConsultorioCaro", "homepage": "https://diegoastein.github.io/ConsultorioCaro/", "topics": ["HC"], "isHidden": false },
+            { "id": 1099448164, "name": "auditoria", "description": "Módulo administrativo para la auditoría de registros de nacimiento.", "url": "https://github.com/diegoastein/auditorianacimientos", "homepage": "https://diegoastein.github.io/auditorianacimientos/", "topics": ["HC"], "isHidden": false },
+            { "id": 1094967320, "name": "licencias", "description": "Gestor de licencias y ausencias del personal de salud.", "url": "https://github.com/diegoastein/licenciasweb", "homepage": "https://diegoastein.github.io/licenciasweb/", "topics": ["uso interno"], "isHidden": false },
+            { "id": 1103359754, "name": "Turnos", "description": "Generador rápido de turnos médicos y recordatorios.", "url": "https://github.com/diegoastein/Consultorios", "homepage": "https://diegoastein.github.io/Consultorios/", "topics": ["HC"], "isHidden": false }
           ]
         };
 
@@ -123,20 +148,20 @@
             editMode: false,
             filter: 'Todos',
 
-            // Paleta neutra distintiva por categoría
+            // Estilos con colores más diferenciados y saturados
             getStyle(topics) {
                 const t = topics.map(x => x.toLowerCase());
-                if (t.includes('hc')) return { icon: 'heart-pulse', bg: 'bg-rose-50/70', border: 'border-rose-200' };
-                if (t.includes('stock') || t.includes('ventas')) return { icon: 'package', bg: 'bg-sky-50/70', border: 'border-sky-200' };
-                if (t.includes('finanzas')) return { icon: 'banknote', bg: 'bg-emerald-50/70', border: 'border-emerald-200' };
-                if (t.includes('uso interno')) return { icon: 'lock', bg: 'bg-amber-50/70', border: 'border-amber-200' };
-                if (t.includes('compras')) return { icon: 'shopping-cart', bg: 'bg-orange-50/70', border: 'border-orange-200' };
-                if (t.includes('simulación')) return { icon: 'activity', bg: 'bg-indigo-50/70', border: 'border-indigo-200' };
-                return { icon: 'code-2', bg: 'bg-white', border: 'border-slate-200' };
+                if (t.includes('hc')) return { icon: 'heart-pulse', bg: 'bg-rose-100/90', border: 'border-rose-300', accent: 'text-rose-700', labelBg: 'bg-rose-200' };
+                if (t.includes('stock') || t.includes('ventas')) return { icon: 'package', bg: 'bg-sky-100/90', border: 'border-sky-300', accent: 'text-sky-700', labelBg: 'bg-sky-200' };
+                if (t.includes('finanzas')) return { icon: 'banknote', bg: 'bg-emerald-100/90', border: 'border-emerald-300', accent: 'text-emerald-700', labelBg: 'bg-emerald-200' };
+                if (t.includes('uso interno')) return { icon: 'lock', bg: 'bg-amber-100/90', border: 'border-amber-300', accent: 'text-amber-700', labelBg: 'bg-amber-200' };
+                if (t.includes('compras')) return { icon: 'shopping-cart', bg: 'bg-orange-100/90', border: 'border-orange-300', accent: 'text-orange-700', labelBg: 'bg-orange-200' };
+                if (t.includes('simulación')) return { icon: 'activity', bg: 'bg-indigo-100/90', border: 'border-indigo-300', accent: 'text-indigo-700', labelBg: 'bg-indigo-200' };
+                return { icon: 'code-2', bg: 'bg-white', border: 'border-slate-200', accent: 'text-slate-600', labelBg: 'bg-slate-100' };
             },
 
             init() {
-                const saved = localStorage.getItem('diego_compact_v6');
+                const saved = localStorage.getItem('diego_compact_v7');
                 this.repos = saved ? JSON.parse(saved).repos : initialData.repos;
                 this.render();
                 lucide.createIcons();
@@ -145,70 +170,73 @@
             render() {
                 const grid = document.getElementById('projects-grid');
                 const filters = document.getElementById('category-filters');
+                const search = document.getElementById('search-input').value.toLowerCase();
 
+                // Filtros de Categoría
                 const cats = new Set(['Todos']);
                 this.repos.forEach(r => { if (!r.isHidden || this.editMode) r.topics.forEach(t => cats.add(t)); });
                 
                 filters.innerHTML = Array.from(cats).map(cat => `
-                    <button onclick="app.setFilter('${cat}')" class="px-2.5 py-1 rounded text-[8px] font-black uppercase tracking-widest transition-all ${this.filter === cat ? 'bg-slate-900 text-white shadow-lg' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}">
+                    <button onclick="app.setFilter('${cat}')" class="px-3 py-1.5 rounded-md text-[10px] font-black uppercase tracking-widest transition-all ${this.filter === cat ? 'bg-indigo-600 text-white shadow-md' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}">
                         ${cat}
                     </button>
                 `).join('');
 
                 const filtered = this.repos.filter(r => {
                     const matchesFilter = this.filter === 'Todos' || r.topics.includes(this.filter);
-                    return matchesFilter && (!r.isHidden || this.editMode);
+                    const matchesSearch = r.name.toLowerCase().includes(search) || r.description.toLowerCase().includes(search);
+                    return matchesFilter && matchesSearch && (!r.isHidden || this.editMode);
                 });
 
                 grid.innerHTML = filtered.map(repo => {
                     const style = this.getStyle(repo.topics);
                     return `
-                    <div class="project-card group flex flex-col ${style.bg} border ${style.border} rounded-lg overflow-hidden relative shadow-sm ${repo.isHidden ? 'opacity-30' : ''}">
+                    <div class="project-card group flex flex-col ${style.bg} border ${style.border} rounded-xl overflow-hidden relative shadow-sm ${repo.isHidden ? 'opacity-30' : ''}">
                         
-                        <!-- Contenido -->
-                        <div class="relative p-3 flex-1 flex flex-col">
-                            <div class="flex justify-between items-start mb-2">
-                                <div class="p-1.5 bg-white border border-white rounded shadow-sm">
-                                    <i data-lucide="${style.icon}" class="w-3.5 h-3.5 text-slate-500"></i>
+                        <!-- Contenido Superior -->
+                        <div class="relative p-4 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="p-2 bg-white border border-white/50 rounded-lg shadow-sm">
+                                    <i data-lucide="${style.icon}" class="w-4 h-4 ${style.accent}"></i>
                                 </div>
                                 ${this.editMode ? `
-                                    <button onclick="app.toggleHide(${repo.id})" class="text-slate-400 hover:text-indigo-600 transition-colors z-20">
-                                        <i data-lucide="${repo.isHidden ? 'eye' : 'eye-off'}" class="w-3.5 h-3.5"></i>
+                                    <button onclick="app.toggleHide(${repo.id})" class="text-slate-400 hover:text-indigo-600 transition-colors z-20 bg-white/50 p-1.5 rounded-lg border border-white">
+                                        <i data-lucide="${repo.isHidden ? 'eye' : 'eye-off'}" class="w-4 h-4"></i>
                                     </button>
                                 ` : ''}
                             </div>
 
-                            <h3 class="font-black text-[10px] uppercase leading-tight tracking-tight mb-1 truncate" title="${repo.name}">${repo.name}</h3>
+                            <h3 class="font-black text-xs md:text-sm uppercase leading-tight tracking-tight mb-2 truncate text-slate-900" title="${repo.name}">${repo.name}</h3>
                             
                             ${this.editMode ? `
-                                <div class="space-y-1.5 mt-1 z-20">
-                                    <input onchange="app.updateField(${repo.id}, 'name', this.value)" value="${repo.name}" class="w-full text-[9px] border-b border-indigo-200 outline-none bg-transparent">
-                                    <input onchange="app.updateField(${repo.id}, 'topics', this.value)" value="${repo.topics.join(', ')}" class="w-full text-[8px] text-indigo-700 bg-white/50 px-1 rounded">
+                                <div class="space-y-2 mt-1 z-20">
+                                    <input onchange="app.updateField(${repo.id}, 'name', this.value)" value="${repo.name}" class="w-full text-xs font-bold border-b border-indigo-200 outline-none bg-transparent">
+                                    <input onchange="app.updateField(${repo.id}, 'topics', this.value)" value="${repo.topics.join(', ')}" class="w-full text-[10px] text-indigo-700 bg-white/60 px-2 py-1 rounded">
                                 </div>
                             ` : `
-                                <div class="flex flex-wrap gap-1 mt-1 mb-2">
-                                    ${repo.topics.map(t => `<span class="text-[7px] font-bold text-slate-800 bg-white/40 px-1 rounded border border-white/60 uppercase tracking-tighter">${t}</span>`).join('')}
+                                <div class="flex flex-wrap gap-1 mt-1 mb-3">
+                                    ${repo.topics.map(t => `<span class="text-[9px] font-black ${style.accent} ${style.labelBg} px-2 py-0.5 rounded uppercase tracking-tighter">${t}</span>`).join('')}
                                 </div>
                             `}
 
-                            <!-- Overlay de Descripción (Hover en Escritorio / Tap en Móvil) -->
+                            <!-- Overlay de Descripción -->
                             ${!this.editMode ? `
-                                <div class="description-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center z-10 p-3">
-                                    <p class="text-white text-[9px] font-bold leading-tight px-1">${repo.description}</p>
+                                <div class="description-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center z-10 p-4">
+                                    <p class="text-white text-[11px] md:text-xs font-semibold leading-relaxed px-1">${repo.description}</p>
                                 </div>
                             ` : ''}
                         </div>
 
                         <!-- Botones de Acción -->
-                        <div class="flex gap-1 p-2 bg-black/5 border-t border-black/5 z-20">
+                        <div class="flex gap-1.5 p-3 bg-white/40 border-t border-black/5 z-20">
                             ${repo.homepage ? `
-                                <a href="${repo.homepage}" target="_blank" rel="noopener" class="flex-1 bg-white text-slate-900 text-[9px] font-bold py-1.5 rounded border border-slate-300 text-center hover:bg-slate-50 active:bg-slate-100 transition-colors uppercase tracking-tighter shadow-sm">Web</a>
+                                <a href="${repo.homepage}" target="_blank" rel="noopener" class="flex-1 bg-white text-slate-900 text-[10px] font-black py-2 rounded-lg border border-slate-200 text-center hover:bg-slate-50 transition-colors uppercase tracking-widest shadow-sm">Web</a>
                             ` : `
-                                <div class="flex-1 bg-black/5 text-slate-400 text-[8px] font-bold py-1.5 rounded text-center uppercase tracking-tighter italic">Local</div>
+                                <div class="flex-1 bg-slate-200/50 text-slate-400 text-[9px] font-black py-2 rounded-lg text-center uppercase tracking-widest italic">Local Only</div>
                             `}
                             
-                            <a href="${repo.url}" target="_blank" rel="noopener" class="px-2.5 bg-slate-800 text-white rounded flex items-center justify-center hover:bg-black transition-colors shadow-lg" title="Ver Código">
-                                <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                            <a href="${repo.url}" target="_blank" rel="noopener" class="px-3 bg-slate-800 text-white rounded-lg flex items-center justify-center hover:bg-black transition-colors shadow-lg" title="Ver Código">
+                                <i data-lucide="github" class="w-4 h-4"></i>
                             </a>
                         </div>
                     </div>
@@ -227,7 +255,7 @@
                 else r[field] = val;
                 this.save(); 
             },
-            save() { localStorage.setItem('diego_compact_v6', JSON.stringify({ username: this.username, repos: this.repos })); },
+            save() { localStorage.setItem('diego_compact_v7', JSON.stringify({ username: this.username, repos: this.repos })); },
             copyConfig() {
                 const text = JSON.stringify({ username: this.username, repos: this.repos }, null, 2);
                 navigator.clipboard.writeText(text).then(() => {
@@ -236,8 +264,8 @@
                     setTimeout(() => t.classList.add('opacity-0'), 2000);
                 });
             },
-            resetData() { if(confirm('¿Restaurar?')) { this.repos = initialData.repos; this.save(); this.render(); } },
-            logout() { if(confirm('¿Cerrar sesión?')) { localStorage.removeItem('diego_compact_v6'); location.reload(); } }
+            resetData() { if(confirm('¿Restaurar configuración original?')) { this.repos = initialData.repos; this.save(); this.render(); } },
+            logout() { if(confirm('¿Cerrar sesión? Esto reiniciará la vista.')) { localStorage.removeItem('diego_compact_v7'); location.reload(); } }
         };
 
         window.onload = () => app.init();
