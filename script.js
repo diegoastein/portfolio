@@ -58,20 +58,54 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
     neocalcu: {
-      badge: "Salud & Lógica Compleja",
-      title: "NeoCalcu — Calculadora Médica de Emergencia Pediátrica",
-      tags: ["TypeScript", "PWA Offline", "Salud / Precisión", "Capacitor"],
-      desafio: "En guardias pediátricas y emergencias médicas, el cálculo de dosis de fármacos por peso corporal requiere precisión matemática absoluta y respuesta en segundos.",
-      solucion: "Desarrollé NeoCalcu (y EGPediatria), una PWA offline que calcula dosis exactas de infusiones, diluciones y tablas de shock con sliders interactivos.",
+      badge: "Salud & Dosificación Neonatal",
+      title: "NeoCalcu — Calculadora Neonatal & UCIN",
+      tags: ["TypeScript", "PWA Offline", "Salud / Precisión", "UCIN"],
+      desafio: "En unidades de terapia intensiva neonatal (UCIN), el cálculo de dosis por peso extremadamente bajo en recién nacidos requiere precisión matemática absoluta.",
+      solucion: "Desarrollé NeoCalcu, una PWA offline de uso bedside que calcula dosis de fármacos neonatales e infusiones con sliders interactivos y validación clínica.",
       impacto: [
         { label: "Margen de Error", value: "0%" },
         { label: "Modo de Uso", value: "100% Offline" },
         { label: "Velocidad de Cálculo", value: "< 2 seg" }
       ],
       isPrivate: false,
-      accessNotes: "Aplicación progresiva clínica instalable en dispositivos móviles.",
+      accessNotes: "Aplicación clínica progresiva instalable en dispositivos móviles.",
       credentials: "Acceso libre / PWA.",
       demoUrl: "https://diegoastein.github.io/neocalcu/"
+    },
+
+    egpediatria: {
+      badge: "Emergencias Pediátricas",
+      title: "EGPediatria — Estoy de Guardia Pediatría",
+      tags: ["JavaScript", "PWA Offline", "SAP / PALS", "Emergencias"],
+      desafio: "En la guardia de pediatría, el cálculo rápido de inotrópicos, antiepilépticos y diluciones bajo estrés requiere una guía gráfica de acceso en segundos.",
+      solucion: "Desarrollé EGPediatria, una aplicación interactiva que genera instrucciones exactas de dilución, volúmenes a extraer por ampolla y tablas de dosificación según estándares SAP y PALS.",
+      impacto: [
+        { label: "Protocolos SAP/PALS", value: "Integrados" },
+        { label: "Instrucciones Dilución", value: "Paso a paso" },
+        { label: "Formato Imprimible", value: "Hojas de pared" }
+      ],
+      isPrivate: false,
+      accessNotes: "Herramienta médica clínica interactiva de acceso público.",
+      credentials: "Acceso libre.",
+      demoUrl: "https://estoydeguardia.com.ar"
+    },
+
+    neomonitor: {
+      badge: "Simulación Médica & Realtime",
+      title: "NeoMonitor — Simulador Virtual de Monitor Multiparamétrico",
+      tags: ["Node.js", "WebSockets", "Realtime API", "Simulación Clínca"],
+      desafio: "Los talleres de simulación médica y RCP neonatal (NRP) requieren monitores multiparamétricos costosos y difíciles de trasladar para entrenar a los profesionales.",
+      solucion: "Creé NeoMonitor (neomonitor.pro), un software de simulación que convierte cualquier pantalla, Smart TV o tablet en monitor multiparamétrico interactivo, controlado en tiempo real desde el celular del instructor mediante WebSockets.",
+      impacto: [
+        { label: "Sincronización WebSockets", value: "< 20ms" },
+        { label: "Control Remoto", value: "100% Móvil" },
+        { label: "Compatibilidad", value: "Cualquier Pantalla" }
+      ],
+      isPrivate: false,
+      accessNotes: "Plataforma de simulación interactiva sin instalación previa.",
+      credentials: "Acceso libre a la demo en neomonitor.pro.",
+      demoUrl: "https://neomonitor.pro/"
     }
   };
 
