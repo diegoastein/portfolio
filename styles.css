@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DEVSTUDIO PORTFOLIO - HIGH-FIDELITY DESKTOP & MOBILE DEVICE FRAMES
+   DEVSTUDIO PORTFOLIO - REAL WEBSITE SCREENSHOTS & DEVICE STYLING
    ========================================================================== */
 
 :root {
@@ -168,7 +168,7 @@ a { color: inherit; text-decoration: none; }
 }
 .project-card:hover { border-color: var(--border-active); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); }
 
-/* --- DEVICE FRAMES (DESKTOP & MOBILE) --- */
+/* --- DEVICE FRAMES WITH REAL SCREENSHOTS --- */
 .card-visual {
   padding: 1.2rem;
   background: #080c14;
@@ -176,10 +176,10 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 200px;
+  min-height: 220px;
 }
 
-/* DESKTOP BROWSER FRAME */
+/* DESKTOP WINDOW FRAME */
 .device-desktop {
   width: 100%;
   background: var(--bg-surface);
@@ -211,7 +211,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 4px;
   padding: 0.15rem 0.5rem;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
   display: flex;
   align-items: center;
@@ -219,129 +219,71 @@ a { color: inherit; text-decoration: none; }
 }
 
 .browser-content {
-  padding: 0.9rem;
+  padding: 0;
   background: #0d1117;
-  font-size: 0.72rem;
+  overflow: hidden;
 }
 
-/* REALISTIC DESKTOP PREVIEWS */
+/* REAL SCREENSHOT IMAGE STYLING */
 .real-screenshot-preview {
   width: 100%;
-  height: 140px;
+  height: 180px;
   object-fit: cover;
   object-position: top;
-  border-radius: 4px;
+  border-radius: 0 0 6px 6px;
   display: block;
-}
-
-.constructora-mockup-body {
-  background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
-  padding: 0.8rem;
-  border-radius: 4px;
-  color: #fff;
-}
-
-.constructora-nav-mini {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 0.4rem;
-  margin-bottom: 0.6rem;
-  font-size: 0.62rem;
-}
-
-.constructora-hero-mini h5 { font-size: 0.85rem; color: #f8fafc; }
-.constructora-hero-mini p { font-size: 0.62rem; color: #94a3b8; margin: 0.2rem 0; }
-.cta-btn-mini {
-  display: inline-block; padding: 0.2rem 0.5rem; background: var(--accent-blue);
-  color: #fff; border-radius: 3px; font-size: 0.6rem; font-weight: 600;
-}
-
-/* E-COMMERCE MOCKUP */
-.shop-mockup-body {
-  display: flex; flex-direction: column; gap: 0.5rem;
-}
-.shop-mockup-header {
-  display: flex; justify-content: space-between; background: rgba(255, 255, 255, 0.04);
-  padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 0.65rem;
-}
-.shop-brands-pills { display: flex; gap: 4px; font-size: 0.58rem; font-family: var(--font-mono); }
-.shop-brands-pills span { background: rgba(56, 189, 248, 0.15); color: var(--accent-sky); padding: 0.1rem 0.3rem; border-radius: 2px; }
-
-.shop-products-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem;
-}
-.shop-card-item {
-  background: #161b22; border: 1px solid var(--border-color); border-radius: 4px;
-  padding: 0.3rem; text-align: center; font-size: 0.6rem;
-}
-.shop-price { color: #4ade80; font-weight: 700; display: block; margin-top: 2px; }
-.shop-checkout-stripe {
-  background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #34d399; padding: 0.25rem; text-align: center; border-radius: 4px; font-size: 0.62rem; font-weight: 600;
 }
 
 /* MOBILE SMARTPHONE DEVICE FRAME */
 .device-mobile {
-  width: 170px;
+  width: 155px;
+  height: 210px;
   background: #000;
-  border: 3px solid #30363d;
+  border: 3.5px solid #30363d;
   border-radius: 24px;
-  padding: 6px;
+  padding: 5px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
   position: relative;
-}
-
-.mobile-notch {
-  width: 45px;
-  height: 8px;
-  background: #161b22;
-  border-radius: 4px;
-  margin: 0 auto 5px auto;
-}
-
-.mobile-screen {
-  background: #090d14;
-  border-radius: 16px;
-  padding: 0.6rem 0.5rem;
-  overflow: hidden;
-  font-size: 0.62rem;
-  min-height: 145px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.mobile-home-bar {
+.mobile-notch {
   width: 40px;
+  height: 6px;
+  background: #161b22;
+  border-radius: 3px;
+  margin: 0 auto 4px auto;
+  flex-shrink: 0;
+}
+
+.mobile-screen {
+  background: #090d14;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.real-mobile-screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+  display: block;
+}
+
+.mobile-home-bar {
+  width: 35px;
   height: 3px;
   background: #475569;
   border-radius: 2px;
-  margin: 5px auto 0 auto;
+  margin: 4px auto 0 auto;
+  flex-shrink: 0;
 }
-
-/* MOBILE APP PREVIEWS */
-.neocalcu-mobile-ui {
-  display: flex; flex-direction: column; gap: 0.4rem;
-}
-.mobile-app-header {
-  display: flex; justify-content: space-between; font-weight: 700; color: var(--accent-sky);
-  border-bottom: 1px solid var(--border-color); padding-bottom: 0.2rem; font-size: 0.65rem;
-}
-.weight-slider-ui { display: flex; flex-direction: column; gap: 2px; }
-.track { height: 4px; background: var(--border-color); border-radius: 2px; overflow: hidden; }
-.fill-track { width: 45%; height: 100%; background: var(--accent-emerald); }
-.dose-result-box {
-  background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #34d399; padding: 0.3rem; border-radius: 4px; font-weight: 600; font-size: 0.6rem;
-}
-
-/* DUAL FRAME (NEOMONITOR) */
-.dual-device-container {
-  display: flex; align-items: center; gap: 0.8rem; width: 100%; justify-content: center;
-}
-.dual-device-container .device-desktop { flex: 1; }
-.dual-device-container .device-mobile { width: 110px; flex-shrink: 0; }
 
 /* CARD CONTENT DETAILS */
 .card-content { padding: 1.4rem; display: flex; flex-direction: column; flex-grow: 1; }
@@ -401,7 +343,7 @@ a { color: inherit; text-decoration: none; }
 /* Footer */
 .footer { padding: 2rem 0; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-muted); }
 
-/* Modal & Screenshot Gallery */
+/* Modal & Screenshot Gallery Grid */
 .modal-overlay {
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.85);
   z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem;
@@ -445,18 +387,17 @@ a { color: inherit; text-decoration: none; }
 .screenshot-gallery {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem;
 }
-.screenshot-gallery img {
-  width: 100%; height: 140px; object-fit: cover; border-radius: 6px;
-  border: 1px solid var(--border-color); transition: var(--transition); cursor: pointer;
+
+.modal-gallery-img {
+  width: 100%; height: 160px; object-fit: cover; object-position: top;
+  border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer; transition: var(--transition);
 }
-.screenshot-gallery img:hover { transform: scale(1.03); border-color: var(--accent-sky); }
+.modal-gallery-img:hover { transform: scale(1.03); border-color: var(--accent-sky); }
 
 .demo-cred-box {
   margin-top: 0.8rem; padding: 0.75rem; background: #090d14; border: 1px dashed var(--border-color);
   border-radius: 4px; font-family: var(--font-mono); font-size: 0.82rem;
 }
-
-.metrics-grid-modal { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
 
 .modal-footer {
   padding: 1rem 1.8rem; border-top: 1px solid var(--border-color); display: flex;
@@ -472,5 +413,4 @@ a { color: inherit; text-decoration: none; }
   }
   .nav-menu.active { transform: translateY(0); }
   .features-ribbon { flex-direction: column; gap: 0.8rem; }
-  .dual-device-container { flex-direction: column; }
 }
