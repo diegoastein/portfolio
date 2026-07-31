@@ -6,7 +6,7 @@
   <title>Portafolio | Desarrollo Web &amp; Software a Medida</title>
   <meta name="description" content="Selección de desarrollos web y aplicaciones a medida para optimizar procesos, ventas y gestión operativa.">
   
-  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -58,13 +58,13 @@
         </h1>
 
         <p class="hero-description">
-          Sin sobreingeniería ni plantillas genéricas: herramientas pragmáticas, rápidas y pensadas para digitalizar procesos, optimizar recursos y potenciar ventas.
+          Herramientas pragmáticas, rápidas y adaptadas a escritorio y dispositivos móviles para digitalizar procesos operativos, potenciar ventas y simular escenarios.
         </p>
 
         <div class="hero-actions">
           <a href="#proyectos" class="btn btn-primary">
             <span>Ver Algunos Proyectos</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7-7 7"/></svg>
           </a>
           <a href="https://wa.me/5491100000000?text=Hola,%20quisiera%20consultarte%20por%20un%20desarrollo%20web" target="_blank" class="btn btn-secondary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.002 3.66 3.745-.983z"/></svg>
@@ -83,7 +83,7 @@
           </div>
           <div class="ribbon-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            <span>Apps PWA &amp; Utilidades</span>
+            <span>Apps Móviles &amp; PWA</span>
           </div>
         </div>
 
@@ -97,7 +97,7 @@
         <div class="section-header text-center">
           <span class="section-tag">Selección de Trabajos</span>
           <h2 class="section-title">Algunos Proyectos</h2>
-          <p class="section-subtitle">Casos prácticos explicados desde el desafío inicial, la arquitectura construida y el resultado alcanzado.</p>
+          <p class="section-subtitle">Vista previa de las plataformas en modo Escritorio (Desktop) y Celular (Mobile) con capturas de panel real.</p>
         </div>
 
         <!-- Filter Bar -->
@@ -105,52 +105,38 @@
           <button class="filter-btn active" data-filter="all">Algunos Proyectos</button>
           <button class="filter-btn" data-filter="b2b">Sistemas B2B</button>
           <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
-          <button class="filter-btn" data-filter="utilidad">Utilidades &amp; Salud</button>
+          <button class="filter-btn" data-filter="utilidad">Salud &amp; Mobile</button>
           <button class="filter-btn" data-filter="landing">Institucionales</button>
         </div>
 
         <!-- Projects Grid -->
         <div class="projects-grid" id="projectsGrid">
           
-          <!-- PROJECT 1: Flota y Obras -->
+          <!-- PROJECT 1: Flota y Obras (DESKTOP FRAME WITH REAL SCREENSHOT) -->
           <article class="project-card" data-category="b2b" data-id="flota">
             <div class="card-visual">
-              <div class="window-frame">
-                <div class="window-top">
-                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                  <span class="window-url">app.flotayobras.com</span>
-                  <span class="lock-icon">🔒</span>
+              <div class="device-desktop">
+                <div class="browser-header">
+                  <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                  <div class="browser-url-bar">
+                    <span>https://flota-60b3c.web.app/dashboard</span>
+                    <span>🔒 Auth</span>
+                  </div>
                 </div>
-                <div class="window-content dashboard-preview">
-                  <div class="mini-sidebar">
-                    <div class="s-item active">🚚 Flota</div>
-                    <div class="s-item">⛽ Vales</div>
-                    <div class="s-item">🏗️ Obras</div>
-                  </div>
-                  <div class="mini-body">
-                    <div class="mini-card-stat">
-                      <small>Combustible Mes</small>
-                      <strong>14,250 Litros</strong>
-                    </div>
-                    <div class="mini-bars">
-                      <div class="b" style="height: 60%;"></div>
-                      <div class="b" style="height: 85%;"></div>
-                      <div class="b" style="height: 45%;"></div>
-                      <div class="b" style="height: 90%;"></div>
-                    </div>
-                  </div>
+                <div class="browser-content">
+                  <img src="img/asi deberia verse.png" alt="Panel de Control de Flota" class="real-screenshot-preview" onerror="this.src='img/image.png'">
                 </div>
               </div>
             </div>
 
             <div class="card-content">
               <div class="card-meta">
-                <span class="category-badge">SaaS B2B / Logística</span>
-                <span class="private-badge">🔒 Acceso Privado</span>
+                <span class="category-badge">SaaS B2B / Modo Escritorio</span>
+                <span class="private-badge">🔒 Acceso Privado (Con Capturas)</span>
               </div>
 
               <h3 class="card-title">Gestión de Flota, Depósito y Obras</h3>
-              <p class="card-desc">Plataforma web a medida para empresas constructoras. Trazabilidad en tiempo real de consumo de combustible, asignación de maquinaria en obras y partes diarios.</p>
+              <p class="card-desc">Plataforma web a medida para empresas constructoras. Trazabilidad en tiempo real de consumo de combustible, asignación de maquinaria y partes diarios.</p>
 
               <div class="card-info-table">
                 <div class="info-row">
@@ -158,8 +144,8 @@
                   <span class="i-val">Falta de control en vales de combustible y partes en papel.</span>
                 </div>
                 <div class="info-row">
-                  <span class="i-label">Resultado:</span>
-                  <span class="i-val accent-val">-35% en inconsistencias y control centralizado.</span>
+                  <span class="i-label">Demostración:</span>
+                  <span class="i-val accent-val">Galería de capturas reales del panel incluida en la modal.</span>
                 </div>
               </div>
 
@@ -168,35 +154,51 @@
                   <span>Firebase</span> <span>Node.js</span> <span>Firestore</span>
                 </div>
                 <button class="btn btn-card open-modal-btn" data-project="flota">
-                  Ver Caso Completo
+                  Ver Recorrido / Capturas del Panel
                 </button>
               </div>
             </div>
           </article>
 
-          <!-- PROJECT 2: E-Commerce Herramientas -->
+          <!-- PROJECT 2: E-Commerce Herramientas (DESKTOP FRAME) -->
           <article class="project-card" data-category="ecommerce" data-id="herramientas">
             <div class="card-visual">
-              <div class="window-frame">
-                <div class="window-top">
-                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                  <span class="window-url">tienda.herramientas.com</span>
-                </div>
-                <div class="window-content shop-preview">
-                  <div class="shop-search">🔍 Buscar amoladora, taladro...</div>
-                  <div class="shop-grid">
-                    <div class="shop-item">⚡ Taladro 18V</div>
-                    <div class="shop-item">🔧 Amoladora</div>
-                    <div class="shop-item">🧰 Caja DeWalt</div>
+              <div class="device-desktop">
+                <div class="browser-header">
+                  <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                  <div class="browser-url-bar">
+                    <span>https://herramientaslibres.web.app</span>
                   </div>
-                  <div class="shop-checkout-badge">💳 Mercado Pago &amp; Envíos CP</div>
+                </div>
+                <div class="browser-content shop-mockup-body">
+                  <div class="shop-mockup-header">
+                    <span>🔍 Buscar amoladora, taladro...</span>
+                    <div class="shop-brands-pills"><span>DeWalt</span><span>Bosch</span><span>Stanley</span></div>
+                  </div>
+                  <div class="shop-products-grid">
+                    <div class="shop-card-item">
+                      <strong>Taladro 18V</strong>
+                      <span class="shop-price">$84.500</span>
+                    </div>
+                    <div class="shop-card-item">
+                      <strong>Amoladora 750W</strong>
+                      <span class="shop-price">$62.000</span>
+                    </div>
+                    <div class="shop-card-item">
+                      <strong>Caja DeWalt</strong>
+                      <span class="shop-price">$45.900</span>
+                    </div>
+                  </div>
+                  <div class="shop-checkout-stripe">
+                    💳 Mercado Pago &amp; Envíos por CP Integrados
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="card-content">
               <div class="card-meta">
-                <span class="category-badge">E-Commerce &amp; Logística</span>
+                <span class="category-badge">E-Commerce / Modo Escritorio &amp; Móvil</span>
               </div>
 
               <h3 class="card-title">E-Commerce &amp; Venta de Herramientas</h3>
@@ -209,7 +211,7 @@
                 </div>
                 <div class="info-row">
                   <span class="i-label">Resultado:</span>
-                  <span class="i-val accent-val">Pasarela de pago integradas y despacho por CP.</span>
+                  <span class="i-val accent-val">Checkout Mercado Pago y despacho por CP.</span>
                 </div>
               </div>
 
@@ -224,19 +226,25 @@
             </div>
           </article>
 
-          <!-- PROJECT 3: JL Constructora SRL -->
+          <!-- PROJECT 3: JL Constructora SRL (DESKTOP FRAME) -->
           <article class="project-card" data-category="landing" data-id="constructora">
             <div class="card-visual">
-              <div class="window-frame">
-                <div class="window-top">
-                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                  <span class="window-url">jlconstructora.com</span>
+              <div class="device-desktop">
+                <div class="browser-header">
+                  <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                  <div class="browser-url-bar">
+                    <span>https://www.jlsrl.com.ar</span>
+                  </div>
                 </div>
-                <div class="window-content landing-preview">
-                  <div class="landing-hero-mini">
-                    <small>OBRAS VIALES &amp; ARQUITECTURA</small>
-                    <h5>JL CONSTRUCTORA SRL</h5>
-                    <span class="mini-btn">Cotizar Obra</span>
+                <div class="browser-content constructora-mockup-body">
+                  <div class="constructora-nav-mini">
+                    <strong>JL CONSTRUCTORA SRL</strong>
+                    <span>Empresa | Obras | Contacto</span>
+                  </div>
+                  <div class="constructora-hero-mini">
+                    <h5>Solidez en Obras Viales &amp; Arquitectura</h5>
+                    <p>Más de 20 años ejecutando proyectos de infraestructura pública y privada.</p>
+                    <span class="cta-btn-mini">Solicitar Cotización</span>
                   </div>
                 </div>
               </div>
@@ -244,7 +252,7 @@
 
             <div class="card-content">
               <div class="card-meta">
-                <span class="category-badge">Institucional &amp; Licitaciones</span>
+                <span class="category-badge">Institucional / Modo Escritorio</span>
               </div>
 
               <h3 class="card-title">Landing Page — JL Constructora SRL</h3>
@@ -253,7 +261,7 @@
               <div class="card-info-table">
                 <div class="info-row">
                   <span class="i-label">Desafío:</span>
-                  <span class="i-val">Presentar portfolio de obras con carga rápida desde obras.</span>
+                  <span class="i-val">Presentar portfolio de obras con carga rápida.</span>
                 </div>
                 <div class="info-row">
                   <span class="i-label">Resultado:</span>
@@ -272,31 +280,38 @@
             </div>
           </article>
 
-          <!-- PROJECT 4: NeoCalcu -->
+          <!-- PROJECT 4: NeoCalcu (MOBILE SMARTPHONE FRAME) -->
           <article class="project-card" data-category="utilidad" data-id="neocalcu">
             <div class="card-visual">
-              <div class="window-frame">
-                <div class="window-top">
-                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                  <span class="window-url">neocalcu.app</span>
-                </div>
-                <div class="window-content medical-preview">
-                  <div class="mini-calc-box">
-                    <span>Peso: <strong>12.5 kg</strong></span>
-                    <div class="mini-slider"><div class="fill"></div></div>
-                    <div class="mini-result">Dosis Neonatal: <strong>0.125 mg</strong></div>
+              <div class="device-mobile">
+                <div class="mobile-notch"></div>
+                <div class="mobile-screen">
+                  <div class="mobile-app-header">
+                    <span>NeoCalcu UCIN</span>
+                    <span>100% Offline</span>
                   </div>
+                  <div class="neocalcu-mobile-ui">
+                    <div class="weight-slider-ui">
+                      <span>Peso Paciente: <strong>3.2 kg</strong></span>
+                      <div class="track"><div class="fill-track"></div></div>
+                    </div>
+                    <div class="dose-result-box">
+                      Dopamina 5 mcg/kg/min:<br>
+                      <strong>0.48 ml/h (Infusión Continua)</strong>
+                    </div>
+                  </div>
+                  <div class="mobile-home-bar"></div>
                 </div>
               </div>
             </div>
 
             <div class="card-content">
               <div class="card-meta">
-                <span class="category-badge">Salud &amp; Dosificación Neonatal</span>
+                <span class="category-badge">App Móvil / Modo Celular</span>
               </div>
 
               <h3 class="card-title">NeoCalcu — Calculadora Neonatal &amp; UCIN</h3>
-              <p class="card-desc">Aplicación clínica progresiva (PWA / Offline) para el cálculo exacto de dosificación farmacológica neonatal e infusiones en terapia intensiva.</p>
+              <p class="card-desc">Aplicación clínica progresiva (PWA / Offline) diseñada específicamente para smartphones, con cálculo exacto de dosificación farmacológica neonatal e infusiones.</p>
 
               <div class="card-info-table">
                 <div class="info-row">
@@ -320,30 +335,35 @@
             </div>
           </article>
 
-          <!-- PROJECT 5: EGPediatria -->
+          <!-- PROJECT 5: EGPediatria (MOBILE SMARTPHONE FRAME) -->
           <article class="project-card" data-category="utilidad" data-id="egpediatria">
             <div class="card-visual">
-              <div class="window-frame">
-                <div class="window-top">
-                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                  <span class="window-url">estoydeguardia.com.ar</span>
-                </div>
-                <div class="window-content medical-preview">
-                  <div class="mini-calc-box">
-                    <span>Guardia Pediátrica: <strong>Inotrópicos &amp; Diluciones</strong></span>
-                    <div class="mini-result">Status Epiléptico: <strong>Midazolam / Lorazepam</strong></div>
+              <div class="device-mobile">
+                <div class="mobile-notch"></div>
+                <div class="mobile-screen">
+                  <div class="mobile-app-header">
+                    <span>EGPediatria</span>
+                    <span>SAP / PALS</span>
                   </div>
+                  <div class="neocalcu-mobile-ui">
+                    <strong style="color:var(--accent-amber); font-size:0.6rem;">Status Epiléptico Pediátrico:</strong>
+                    <div class="dose-result-box" style="background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.3); color:#fcd34d;">
+                      Midazolam 0.2 mg/kg EV<br>
+                      <strong>Bolo lento (2 min)</strong>
+                    </div>
+                  </div>
+                  <div class="mobile-home-bar"></div>
                 </div>
               </div>
             </div>
 
             <div class="card-content">
               <div class="card-meta">
-                <span class="category-badge">Emergencias Pediátricas</span>
+                <span class="category-badge">App Móvil / Modo Celular</span>
               </div>
 
               <h3 class="card-title">EGPediatria — Estoy de Guardia Pediatría</h3>
-              <p class="card-desc">Herramienta clínica interactiva para guardias pediátricas. Tablas de dosificación, diluciones de inotrópicos y protocolos de emergencia según guías SAP/PALS.</p>
+              <p class="card-desc">Herramienta clínica interactiva optimizada para smartphones. Tablas de dosificación, diluciones de inotrópicos y protocolos de emergencia según guías SAP/PALS.</p>
 
               <div class="card-info-table">
                 <div class="info-row">
@@ -367,35 +387,44 @@
             </div>
           </article>
 
-          <!-- PROJECT 6: NeoMonitor -->
+          <!-- PROJECT 6: NeoMonitor (DUAL DESKTOP + MOBILE SYNC FRAME) -->
           <article class="project-card" data-category="utilidad" data-id="neomonitor">
             <div class="card-visual">
-              <div class="window-frame">
-                <div class="window-top">
-                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                  <span class="window-url">neomonitor.pro</span>
-                </div>
-                <div class="window-content analytics-preview">
-                  <div class="mini-table-preview">
-                    <div class="t-row header"><span>Monitor Simulación</span><span class="text-green">FC: 140 bpm</span></div>
-                    <div class="t-row"><span>SpO2: 96%</span><strong>Control Remoto WebSockets</strong></div>
+              <div class="dual-device-container">
+                <div class="device-desktop">
+                  <div class="browser-header">
+                    <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <div class="browser-url-bar"><span>https://neomonitor.pro</span></div>
                   </div>
+                  <div class="browser-content" style="background:#000; padding:0.5rem; text-align:center;">
+                    <div style="color:#4ade80; font-family:var(--font-mono); font-size:0.62rem;">
+                      📈 FC: 140 bpm | SpO2: 96%
+                    </div>
+                  </div>
+                </div>
+                <div class="device-mobile">
+                  <div class="mobile-notch"></div>
+                  <div class="mobile-screen" style="min-height:100px; padding:0.3rem;">
+                    <span style="font-size:0.55rem; color:var(--accent-sky);">Control Remoto</span>
+                    <span style="font-size:0.52rem; color:#fff;">WebSockets Sync</span>
+                  </div>
+                  <div class="mobile-home-bar"></div>
                 </div>
               </div>
             </div>
 
             <div class="card-content">
               <div class="card-meta">
-                <span class="category-badge">Simulación Médica &amp; Realtime</span>
+                <span class="category-badge">Simulación / Multi-Dispositivo</span>
               </div>
 
               <h3 class="card-title">NeoMonitor — Simulador Virtual de Monitor</h3>
-              <p class="card-desc">Plataforma de simulación clínica multiparamétrica. Convierte cualquier pantalla o tablet en monitor controlado en tiempo real desde un smartphone vía WebSockets para talleres de RCP/NRP.</p>
+              <p class="card-desc">Plataforma de simulación clínica multiparamétrica. Convierte cualquier pantalla o Smart TV en monitor controlado en tiempo real desde un smartphone vía WebSockets para talleres de RCP/NRP.</p>
 
               <div class="card-info-table">
                 <div class="info-row">
                   <span class="i-label">Desafío:</span>
-                  <span class="i-val">Reemplazar equipamiento físico costoso para cursos de simulación.</span>
+                  <span class="i-val">Reemplazar equipamiento físico costoso para simulación.</span>
                 </div>
                 <div class="info-row">
                   <span class="i-label">Resultado:</span>
@@ -437,8 +466,8 @@
 
           <div class="approach-card">
             <div class="card-num">02</div>
-            <h4>Diseñado para Celulares</h4>
-            <p>Garantía de funcionamiento fluido en smartphones, donde se toman la mayoría de decisiones sobre la marcha.</p>
+            <h4>Diseñado para Celulares &amp; Escritorio</h4>
+            <p>Garantía de funcionamiento fluido en smartphones y computadoras, adaptado a la forma de trabajo de cada cliente.</p>
           </div>
 
           <div class="approach-card">
@@ -450,7 +479,7 @@
           <div class="approach-card">
             <div class="card-num">04</div>
             <h4>Demostración &amp; Pruebas</h4>
-            <p>Entregables progresivos con datos de prueba para validar la herramienta en situaciones reales.</p>
+            <p>Entregables progresivos con capturas y datos de prueba para validar la herramienta en situaciones reales.</p>
           </div>
         </div>
 
@@ -473,7 +502,7 @@
           </div>
           <div class="stack-box">
             <h5>Backend &amp; Cloud</h5>
-            <p>Node.js, Firebase Firestore, Authentication, Cloud Functions, REST APIs.</p>
+            <p>Node.js, Firebase Firestore, Authentication, Cloud Functions, WebSockets, REST APIs.</p>
           </div>
           <div class="stack-box">
             <h5>Mobile &amp; Deploy</h5>
@@ -521,7 +550,7 @@
       <div class="modal-tabs">
         <button class="modal-tab-btn active" data-tab="desafio">1. El Desafío</button>
         <button class="modal-tab-btn" data-tab="solucion">2. La Solución</button>
-        <button class="modal-tab-btn" data-tab="impacto">3. Impacto</button>
+        <button class="modal-tab-btn" data-tab="capturas">3. Recorrido &amp; Capturas</button>
         <button class="modal-tab-btn" data-tab="acceso">4. Acceso / Demo</button>
       </div>
 
@@ -540,8 +569,12 @@
           </div>
         </div>
 
-        <div class="tab-content" id="tab-impacto">
-          <div class="metrics-grid-modal" id="modalImpactGrid"></div>
+        <div class="tab-content" id="tab-capturas">
+          <div class="info-card">
+            <h4>📸 Recorrido del Panel &amp; Pantallas Reales</h4>
+            <p style="font-size:0.85rem; margin-top:0.3rem;">Visualización de los módulos de la aplicación en producción:</p>
+            <div class="screenshot-gallery" id="modalGalleryGrid"></div>
+          </div>
         </div>
 
         <div class="tab-content" id="tab-acceso">
