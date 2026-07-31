@@ -1,10 +1,10 @@
 /* ==========================================================================
-   DEVSTUDIO PORTFOLIO - INTERACTIVE SCRIPT WITH REAL WEBSITE SCREENSHOTS
+   DEVSTUDIO PORTFOLIO - INTERACTIVE SCRIPT WITH REAL GALLERY SLIDERS
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- 1. Case Studies Data Dictionary (Real Screenshots & No Exposed Domains) ---
+  // --- 1. Case Studies Data Dictionary (Authentic Screenshots) ---
   const caseStudiesData = {
     flota: {
       badge: "SaaS B2B / Logística Privada",
@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
       desafio: "Una empresa constructora con más de 40 vehículos y equipos pesados en obra sufría ineficiencia y falta de trazabilidad en vales de combustible y partes diarios en papel.",
       solucion: "Desarrollé una plataforma web integral en tiempo real donde choferes y maquinistas registran partes diarios y cargas con validación de kilometraje. El panel de administración alerta consumos anómalos y vencimientos de service.",
       screenshots: [
-        "img/flota_real_1.png",
-        "img/flota_real_3.png",
-        "img/flota_real_2.png"
+        "img/flota_1.png",
+        "img/flota_2.png",
+        "img/flota_3.png"
       ],
       isPrivate: true,
       accessNotes: "Sistema enterprise privado de uso interno corporativo. Debido a la confidencialidad de los datos operativos de la empresa, se exhiben las capturas directas de la aplicación actual.",
@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
       desafio: "Un comercio de herramientas e insumos industriales necesitaba digitalizar sus ventas de forma integral, pasando de un catálogo tradicional a una tienda online completa con carrito, cobros automatizados y despacho de envíos.",
       solucion: "Desarrollé una plataforma de e-commerce con arquitectura moderna (Vite/React). Permite navegación fluida en catálogo, integración de pasarelas de pago (Mercado Pago, tarjetas de crédito/débito), cálculo de costo de envío según código postal o retiro en local, y panel de administración de pedidos.",
       screenshots: [
-        "img/herramientas_real_1.png"
+        "img/herramientas_1.png",
+        "img/herramientas_2.png"
       ],
       isPrivate: false,
       accessNotes: "Plataforma de e-commerce abierta con carrito, procesamiento de pagos y gestión de envíos por CP.",
@@ -45,9 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
       desafio: "La constructora necesitaba presentar credenciales ante licitaciones y empresas de alto ticket. Su sitio web anterior era lento y no transmitía solvencia corporativa.",
       solucion: "Implementé una web institucional ultra limpia sin librerías pesadas, destacando proyectos ejecutados, capacidad técnica y botón directo a presupuestos.",
       screenshots: [
-        "img/constructora_real_1.png",
-        "img/constructora_real_2.png",
-        "img/constructora_real_mobile.png"
+        "img/constructora_1.png",
+        "img/constructora_2.png",
+        "img/constructora_3.png"
       ],
       isPrivate: false,
       accessNotes: "Sitio web de acceso público y optimizado para buscadores.",
@@ -62,9 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
       desafio: "En unidades de terapia intensiva neonatal (UCIN), el cálculo de dosis por peso extremadamente bajo en recién nacidos requiere precisión matemática absoluta.",
       solucion: "Desarrollé NeoCalcu, una PWA offline de uso bedside que calcula dosis de fármacos neonatales e infusiones con sliders interactivos y validación clínica.",
       screenshots: [
-        "img/neocalcu_real_1.png",
-        "img/neocalcu_real_2.png",
-        "img/neocalcu_real_3.png"
+        "img/neocalcu_1.png",
+        "img/neocalcu_2.png",
+        "img/neocalcu_3.png"
       ],
       isPrivate: false,
       accessNotes: "Aplicación clínica progresiva instalable en dispositivos móviles.",
@@ -79,7 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
       desafio: "En la guardia de pediatría, el cálculo rápido de inotrópicos, antiepilépticos y diluciones bajo estrés requiere una guía gráfica de acceso en segundos.",
       solucion: "Desarrollé EGPediatria, una aplicación interactiva que genera instrucciones exactas de dilución, volúmenes a extraer por ampolla y tablas de dosificación según estándares SAP y PALS.",
       screenshots: [
-        "img/egpediatria_real_1.png"
+        "img/egpediatria_1.png",
+        "img/egpediatria_2.png",
+        "img/egpediatria_3.png"
       ],
       isPrivate: false,
       accessNotes: "Herramienta médica clínica interactiva de acceso público.",
@@ -94,7 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
       desafio: "Los talleres de simulación médica y RCP neonatal (NRP) requieren monitores multiparamétricos costosos y difíciles de trasladar para entrenar a los profesionales.",
       solucion: "Creé NeoMonitor, un software de simulación que convierte cualquier pantalla, Smart TV o tablet en monitor multiparamétrico interactivo, controlado en tiempo real desde el celular del instructor mediante WebSockets.",
       screenshots: [
-        "img/neomonitor_real_1.jpg"
+        "img/neomonitor_1.png",
+        "img/neomonitor_2.png"
       ],
       isPrivate: false,
       accessNotes: "Plataforma de simulación interactiva sin instalación previa.",
@@ -103,7 +107,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // --- 2. Category Filtering ---
+  // --- 2. Interactive Card Gallery Sliders ---
+  const cardSliders = document.querySelectorAll('.card-gallery-slider');
+
+  cardSliders.forEach(slider => {
+    const images = slider.querySelectorAll('.gallery-img');
+    const prevBtn = slider.querySelector('.prev-arrow');
+    const nextBtn = slider.querySelector('.next-arrow');
+    const counter = slider.querySelector('.gallery-counter');
+    let currentIndex = 0;
+
+    function updateSlider() {
+      images.forEach((img, idx) => {
+        img.classList.toggle('active', idx === currentIndex);
+      });
+      if (counter) {
+        counter.textContent = `${currentIndex + 1} / ${images.length}`;
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlider();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlider();
+      });
+    }
+  });
+
+  // --- 3. Category Filtering ---
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
@@ -125,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- 3. Case Study Modal ---
+  // --- 4. Case Study Modal ---
   const modalOverlay = document.getElementById('caseStudyModal');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalCloseBottomBtn = document.getElementById('modalCloseBottomBtn');
@@ -218,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === modalOverlay) closeModal();
   });
 
-  // --- 4. Mobile Menu Navigation ---
+  // --- 5. Mobile Menu Navigation ---
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navMenu = document.getElementById('navMenu');
 
