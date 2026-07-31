@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Summary
 
-**DevStudio Portfolio** es un sitio web de portafolio para un desarrollador web enfocado en software a medida, sistemas B2B, plataformas de e-commerce, aplicaciones de utilidad médica y sitios corporativos.
+**DAStudio Portfolio** es un sitio web de portafolio para un desarrollador web enfocado en software a medida, sistemas B2B, plataformas de e-commerce, aplicaciones de utilidad médica y sitios corporativos.
 
 - **Repositorio GitHub**: [https://github.com/diegoastein/portfolio](https://github.com/diegoastein/portfolio)
 - **Producción (GitHub Pages)**: [https://diegoastein.github.io/portfolio/](https://diegoastein.github.io/portfolio/)
@@ -46,7 +46,7 @@ git push origin main
   - `www.jlsrl.com.ar` — Landing Page JL Constructora SRL.
 
 ### 4. Marca Neutra
-- Mantener la marca neutra `DevStudio / Desarrollo Web & Software a Medida`. No personalizar con nombres propios individuales.
+- Mantener la marca neutra `DAStudio / Desarrollo Web & Software a Medida`. No personalizar con nombres propios individuales.
 
 ### 5. Galerías Interactivas
 - Todas las tarjetas de proyectos incorporan un carrusel interactivo (`.card-gallery-slider`) con flechas de navegación (`‹` y `›`) y contador (`1 / N`).
