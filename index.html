@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio | Desarrollo Web &amp; Software a Medida</title>
+  <meta name="description" content="Selección de desarrollos web y aplicaciones a medida para optimizar procesos, ventas y gestión operativa.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#inicio" class="nav-logo">
+        <span class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+        </span>
+        <span class="logo-text">DevStudio</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#proyectos" class="nav-link">Algunos Proyectos</a>
+        <a href="#enfoque" class="nav-link">Enfoque</a>
+        <a href="#stack" class="nav-link">Stack</a>
+        <a href="#contacto" class="nav-link btn-nav-cta">
+          <span>Contacto</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </nav>
+
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+      <div class="container hero-container">
+        
+        <div class="hero-pill">
+          <span class="pill-dot"></span>
+          <span>Desarrollo Web &amp; Software a Medida</span>
+        </div>
+
+        <h1 class="hero-title">
+          Aplicaciones y sitios web orientados a <span class="accent-text">resolver problemas reales</span> de negocio.
+        </h1>
+
+        <p class="hero-description">
+          Sin sobreingeniería ni plantillas genéricas: herramientas pragmáticas, rápidas y pensadas para digitalizar procesos, optimizar recursos y potenciar ventas.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#proyectos" class="btn btn-primary">
+            <span>Ver Algunos Proyectos</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+          <a href="https://wa.me/5491100000000?text=Hola,%20quisiera%20consultarte%20por%20un%20desarrollo%20web" target="_blank" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.002 3.66 3.745-.983z"/></svg>
+            <span>Consultar por WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="features-ribbon">
+          <div class="ribbon-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span>Sistemas B2B &amp; SaaS</span>
+          </div>
+          <div class="ribbon-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>E-Commerce &amp; Pagos</span>
+          </div>
+          <div class="ribbon-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>Apps PWA &amp; Utilidades</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="proyectos">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">Selección de Trabajos</span>
+          <h2 class="section-title">Algunos Proyectos</h2>
+          <p class="section-subtitle">Casos prácticos explicados desde el desafío inicial, la arquitectura construida y el resultado alcanzado.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">Algunos Proyectos</button>
+          <button class="filter-btn" data-filter="b2b">Sistemas B2B</button>
+          <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+          <button class="filter-btn" data-filter="utilidad">Utilidades &amp; Salud</button>
+          <button class="filter-btn" data-filter="landing">Institucionales</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+          
+          <!-- PROJECT 1: Flota y Obras -->
+          <article class="project-card" data-category="b2b" data-id="flota">
+            <div class="card-visual">
+              <div class="window-frame">
+                <div class="window-top">
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                  <span class="window-url">app.flotayobras.com</span>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="window-content dashboard-preview">
+                  <div class="mini-sidebar">
+                    <div class="s-item active">🚚 Flota</div>
+                    <div class="s-item">⛽ Vales</div>
+                    <div class="s-item">🏗️ Obras</div>
+                  </div>
+                  <div class="mini-body">
+                    <div class="mini-card-stat">
+                      <small>Combustible Mes</small>
+                      <strong>14,250 Litros</strong>
+                    </div>
+                    <div class="mini-bars">
+                      <div class="b" style="height: 60%;"></div>
+                      <div class="b" style="height: 85%;"></div>
+                      <div class="b" style="height: 45%;"></div>
+                      <div class="b" style="height: 90%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="category-badge">SaaS B2B / Logística</span>
+                <span class="private-badge">🔒 Acceso Privado</span>
+              </div>
+
+              <h3 class="card-title">Gestión de Flota, Depósito y Obras</h3>
+              <p class="card-desc">Plataforma web a medida para empresas constructoras. Trazabilidad en tiempo real de consumo de combustible, asignación de maquinaria en obras y partes diarios.</p>
+
+              <div class="card-info-table">
+                <div class="info-row">
+                  <span class="i-label">Desafío:</span>
+                  <span class="i-val">Falta de control en vales de combustible y partes en papel.</span>
+                </div>
+                <div class="info-row">
+                  <span class="i-label">Resultado:</span>
+                  <span class="i-val accent-val">-35% en inconsistencias y control centralizado.</span>
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <div class="tech-tags">
+                  <span>Firebase</span> <span>Node.js</span> <span>Firestore</span>
+                </div>
+                <button class="btn btn-card open-modal-btn" data-project="flota">
+                  Ver Caso Completo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: E-Commerce Herramientas -->
+          <article class="project-card" data-category="ecommerce" data-id="herramientas">
+            <div class="card-visual">
+              <div class="window-frame">
+                <div class="window-top">
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                  <span class="window-url">tienda.herramientas.com</span>
+                </div>
+                <div class="window-content shop-preview">
+                  <div class="shop-search">🔍 Buscar amoladora, taladro...</div>
+                  <div class="shop-grid">
+                    <div class="shop-item">⚡ Taladro 18V</div>
+                    <div class="shop-item">🔧 Amoladora</div>
+                    <div class="shop-item">🧰 Caja DeWalt</div>
+                  </div>
+                  <div class="shop-checkout-badge">💳 Mercado Pago &amp; Envíos CP</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="category-badge">E-Commerce &amp; Logística</span>
+              </div>
+
+              <h3 class="card-title">E-Commerce &amp; Venta de Herramientas</h3>
+              <p class="card-desc">Tienda online integral para herramientas e insumos profesionales. Carrito de compras, procesamiento de pagos y cálculo automático de envíos por código postal.</p>
+
+              <div class="card-info-table">
+                <div class="info-row">
+                  <span class="i-label">Desafío:</span>
+                  <span class="i-val">Venta online automatizada con cobros y envíos dinámicos.</span>
+                </div>
+                <div class="info-row">
+                  <span class="i-label">Resultado:</span>
+                  <span class="i-val accent-val">Pasarela de pago integradas y despacho por CP.</span>
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <div class="tech-tags">
+                  <span>Vite/React</span> <span>MercadoPago</span> <span>Envíos</span>
+                </div>
+                <button class="btn btn-card open-modal-btn" data-project="herramientas">
+                  Ver Caso Completo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: JL Constructora SRL -->
+          <article class="project-card" data-category="landing" data-id="constructora">
+            <div class="card-visual">
+              <div class="window-frame">
+                <div class="window-top">
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                  <span class="window-url">jlconstructora.com</span>
+                </div>
+                <div class="window-content landing-preview">
+                  <div class="landing-hero-mini">
+                    <small>OBRAS VIALES &amp; ARQUITECTURA</small>
+                    <h5>JL CONSTRUCTORA SRL</h5>
+                    <span class="mini-btn">Cotizar Obra</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="category-badge">Institucional &amp; Licitaciones</span>
+              </div>
+
+              <h3 class="card-title">Landing Page — JL Constructora SRL</h3>
+              <p class="card-desc">Sitio web corporativo de alta velocidad diseñado para presentar credenciales técnicas ante licitaciones y clientes de proyectos de gran escala.</p>
+
+              <div class="card-info-table">
+                <div class="info-row">
+                  <span class="i-label">Desafío:</span>
+                  <span class="i-val">Presentar portfolio de obras con carga rápida desde obras.</span>
+                </div>
+                <div class="info-row">
+                  <span class="i-label">Resultado:</span>
+                  <span class="i-val accent-val">Carga en &lt;1.2s y generación de contactos B2B.</span>
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <div class="tech-tags">
+                  <span>HTML5</span> <span>CSS3</span> <span>SEO B2B</span>
+                </div>
+                <button class="btn btn-card open-modal-btn" data-project="constructora">
+                  Ver Caso Completo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: NeoCalcu -->
+          <article class="project-card" data-category="utilidad" data-id="neocalcu">
+            <div class="card-visual">
+              <div class="window-frame">
+                <div class="window-top">
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                  <span class="window-url">neocalcu.app</span>
+                </div>
+                <div class="window-content medical-preview">
+                  <div class="mini-calc-box">
+                    <span>Peso: <strong>12.5 kg</strong></span>
+                    <div class="mini-slider"><div class="fill"></div></div>
+                    <div class="mini-result">Adrenalina: <strong>0.125 mg</strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="category-badge">Salud &amp; Lógica Compleja</span>
+              </div>
+
+              <h3 class="card-title">NeoCalcu — Calculadora Médica de Emergencia</h3>
+              <p class="card-desc">Aplicación clínica progresiva (PWA / Offline) para el cálculo exacto de dosis farmacológicas pediátricas e infusiones bajo situaciones de urgencia.</p>
+
+              <div class="card-info-table">
+                <div class="info-row">
+                  <span class="i-label">Desafío:</span>
+                  <span class="i-val">Eliminar el riesgo de error manual en dosificaciones.</span>
+                </div>
+                <div class="info-row">
+                  <span class="i-label">Resultado:</span>
+                  <span class="i-val accent-val">Precisión matemática absoluta y respuesta offline.</span>
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <div class="tech-tags">
+                  <span>TypeScript</span> <span>PWA</span> <span>Capacitor</span>
+                </div>
+                <button class="btn btn-card open-modal-btn" data-project="neocalcu">
+                  Ver Caso Completo
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Approach Section -->
+    <section class="approach-section" id="enfoque">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">Criterio de Trabajo</span>
+          <h2 class="section-title">Enfoque Pragmático</h2>
+          <p class="section-subtitle">Entender la necesidad operativa antes de escribir código.</p>
+        </div>
+
+        <div class="approach-grid">
+          <div class="approach-card">
+            <div class="card-num">01</div>
+            <h4>Problema de Negocio Primero</h4>
+            <p>Identificamos el objetivo de fondo: ahorrar horas de trabajo, eliminar errores manuales o aumentar ventas.</p>
+          </div>
+
+          <div class="approach-card">
+            <div class="card-num">02</div>
+            <h4>Diseñado para Celulares</h4>
+            <p>Garantía de funcionamiento fluido en smartphones, donde se toman la mayoría de decisiones sobre la marcha.</p>
+          </div>
+
+          <div class="approach-card">
+            <div class="card-num">03</div>
+            <h4>Interfaces Intuitivas</h4>
+            <p>Desarrollos limpios que no requieran capacitaciones complejas para ser utilizados desde el primer día.</p>
+          </div>
+
+          <div class="approach-card">
+            <div class="card-num">04</div>
+            <h4>Demostración &amp; Pruebas</h4>
+            <p>Entregables progresivos con datos de prueba para validar la herramienta en situaciones reales.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Stack Section -->
+    <section class="stack-section" id="stack">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">Stack Técnico</span>
+          <h2 class="section-title">Herramientas &amp; Tecnologías</h2>
+        </div>
+
+        <div class="stack-grid">
+          <div class="stack-box">
+            <h5>Frontend</h5>
+            <p>HTML5, CSS3, JavaScript ES6+, TypeScript, React.js, Vite, Tailwind CSS.</p>
+          </div>
+          <div class="stack-box">
+            <h5>Backend &amp; Cloud</h5>
+            <p>Node.js, Firebase Firestore, Authentication, Cloud Functions, REST APIs.</p>
+          </div>
+          <div class="stack-box">
+            <h5>Mobile &amp; Deploy</h5>
+            <p>Progressive Web Apps (PWA), Capacitor, Vercel, Netlify, Firebase Hosting.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-section" id="contacto">
+      <div class="container">
+        <div class="contact-card text-center">
+          <h2 class="contact-title">¿Tienes una idea o proyecto para desarrollar?</h2>
+          <p class="contact-desc">Podemos analizar la necesidad operativa de tu negocio y definir el alcance técnico ideal.</p>
+
+          <a href="https://wa.me/5491100000000?text=Hola,%20quisiera%20consultarte%20por%20un%20desarrollo%20web" target="_blank" class="btn btn-whatsapp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.002 3.66 3.745-.983z"/></svg>
+            <span>Hablar por WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 DevStudio — Desarrollo Web &amp; Software a Medida.</p>
+    </div>
+  </footer>
+
+  <!-- CASE STUDY MODAL -->
+  <div class="modal-overlay" id="caseStudyModal">
+    <div class="modal-window">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Cerrar">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-badge" id="modalBadge">SaaS B2B</span>
+        <h2 class="modal-title" id="modalTitle">Título del Proyecto</h2>
+        <div class="modal-tags" id="modalTags"></div>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" data-tab="desafio">1. El Desafío</button>
+        <button class="modal-tab-btn" data-tab="solucion">2. La Solución</button>
+        <button class="modal-tab-btn" data-tab="impacto">3. Impacto</button>
+        <button class="modal-tab-btn" data-tab="acceso">4. Acceso / Demo</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="tab-content active" id="tab-desafio">
+          <div class="info-card warning-card">
+            <h4>📌 Problema Inicial</h4>
+            <p id="modalDesafioText"></p>
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab-solucion">
+          <div class="info-card success-card">
+            <h4>💡 Solución Desarrollada</h4>
+            <p id="modalSolucionText"></p>
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab-impacto">
+          <div class="metrics-grid-modal" id="modalImpactGrid"></div>
+        </div>
+
+        <div class="tab-content" id="tab-acceso">
+          <div class="info-card auth-card">
+            <h4>🔒 Acceso &amp; Credenciales</h4>
+            <p id="modalAccessNotes"></p>
+            <div class="demo-cred-box" id="demoCredentialsBox"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="#" id="modalDemoLink" target="_blank" class="btn btn-primary btn-sm">
+          <span>Ver Sitio / Demo</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+        <button class="btn btn-secondary btn-sm" id="modalCloseBottomBtn">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
