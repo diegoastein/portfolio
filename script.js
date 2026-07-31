@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: true,
       accessNotes: "Sistema enterprise privado de uso interno corporativo. Debido a la confidencialidad de los datos operativos de la empresa, se exhiben las capturas directas de la aplicación actual.",
       credentials: "Modo Privado / Datos de demostración bajo solicitud.",
-      demoUrl: "https://wa.me/5491100000000?text=Hola,%20quisiera%20consultar%20por%20el%20sistema%20de%20gestion%20de%20flotas"
+      demoUrl: "https://www.instagram.com/DAStudio2026/"
     },
 
     herramientas: {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       accessNotes: "Plataforma de e-commerce de acceso libre y público, disponible en herramientaslibres.web.app.",
       credentials: "Acceso libre en herramientaslibres.web.app",
       liveUrl: "https://herramientaslibres.web.app",
-      demoUrl: "https://wa.me/5491100000000?text=Hola,%20quisiera%20consultar%20por%20la%20plataforma%20de%20ecommerce"
+      demoUrl: "https://www.instagram.com/DAStudio2026/"
     },
 
     constructora: {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       accessNotes: "Sitio web de acceso público y optimizado para buscadores, disponible en www.jlsrl.com.ar.",
       credentials: "Acceso libre en www.jlsrl.com.ar",
       liveUrl: "https://www.jlsrl.com.ar",
-      demoUrl: "https://wa.me/5491100000000?text=Hola,%20quisiera%20consultar%20por%20un%20sitio%20web%20institucional"
+      demoUrl: "https://www.instagram.com/DAStudio2026/"
     },
 
     neocalcu: {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: false,
       accessNotes: "Aplicación clínica progresiva instalable en dispositivos móviles.",
       credentials: "Acceso libre / PWA.",
-      demoUrl: "https://wa.me/5491100000000?text=Hola,%20quisiera%20consultar%20por%20apps%20medicas%20o%20calculadoras"
+      demoUrl: "https://www.instagram.com/DAStudio2026/"
     },
 
     egpediatria: {
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: false,
       accessNotes: "Herramienta médica clínica interactiva de acceso público.",
       credentials: "Acceso libre.",
-      demoUrl: "https://wa.me/5491100000000?text=Hola,%20quisiera%20consultar%20por%20EGPediatria"
+      demoUrl: "https://www.instagram.com/DAStudio2026/"
     },
 
     neomonitor: {
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: false,
       accessNotes: "Plataforma de simulación interactiva sin instalación previa.",
       credentials: "Acceso libre a la demo.",
-      demoUrl: "https://wa.me/5491100000000?text=Hola,%20quisiera%20consultar%20por%20el%20simulador%20NeoMonitor"
+      demoUrl: "https://www.instagram.com/DAStudio2026/"
     }
   };
 
