@@ -39,8 +39,11 @@ git push origin main
 - **Prohibición de Mockups**: No utilizar maquetados gráficos dibujaos o ilustrados.
 
 ### 3. Ocultamiento de Dominios
-- **Cero URLs Expuestas**: No mostrar nombres de dominio (`.web.app`, `.com.ar`, `.pro`) en las barras superiores de los marcos de escritorio o celulares.
+- **Cero URLs Expuestas por Defecto**: No mostrar nombres de dominio (`.web.app`, `.com.ar`, `.pro`) en las barras superiores de los marcos de escritorio o celulares, salvo las excepciones explícitas listadas abajo.
 - **Titulares Descriptivos**: Utilizar etiquetas funcionales limpias (ej. `🔒 Panel de Gestión de Flota`, `🛒 Tienda Online & Catálogo`, `📱 App Clínica Offline`, `📈 Monitor de Simulación`).
+- **Excepciones permitidas** (proyectos de acceso público donde el cliente autorizó mostrar el dominio):
+  - `herramientaslibres.web.app` — E-Commerce & Venta de Herramientas (acceso libre).
+  - `www.jlsrl.com.ar` — Landing Page JL Constructora SRL.
 
 ### 4. Marca Neutra
 - Mantener la marca neutra `DevStudio / Desarrollo Web & Software a Medida`. No personalizar con nombres propios individuales.

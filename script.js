@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Control de Flota, Depósito & Obras",
       tags: ["Firebase Firestore", "Node.js", "JavaScript Realtime", "Panel B2B"],
       desafio: "Una empresa constructora con más de 40 vehículos y equipos pesados en obra sufría ineficiencia y falta de trazabilidad en vales de combustible y partes diarios en papel.",
-      solucion: "Desarrollé una plataforma web integral en tiempo real donde choferes y maquinistas registran partes diarios y cargas con validación de kilometraje. El panel de administración alerta consumos anómalos y vencimientos de service.",
+      solucion: "Desarrollamos una plataforma web integral en tiempo real donde los operadores registran partes diarios y cargas con validación de kilometraje. El panel de administración alerta consumos anómalos y vencimientos de service.",
       screenshots: [
         "img/flota_1.png",
         "img/flota_2.png",
-        "img/flota_3.png"
+        "img/flota_3.png",
+        "img/flota_4.png",
+        "img/flota_5.png"
       ],
       isPrivate: true,
       accessNotes: "Sistema enterprise privado de uso interno corporativo. Debido a la confidencialidad de los datos operativos de la empresa, se exhiben las capturas directas de la aplicación actual.",
@@ -28,14 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Plataforma de E-Commerce & Venta de Herramientas",
       tags: ["Vite / React", "MercadoPago API", "Cálculo de Envíos", "Checkout B2C/B2B", "Firebase"],
       desafio: "Un comercio de herramientas e insumos industriales necesitaba digitalizar sus ventas de forma integral, pasando de un catálogo tradicional a una tienda online completa con carrito, cobros automatizados y despacho de envíos.",
-      solucion: "Desarrollé una plataforma de e-commerce con arquitectura moderna (Vite/React). Permite navegación fluida en catálogo, integración de pasarelas de pago (Mercado Pago, tarjetas de crédito/débito), cálculo de costo de envío según código postal o retiro en local, y panel de administración de pedidos.",
+      solucion: "Desarrollamos una plataforma de e-commerce con arquitectura moderna (Vite/React). Permite navegación fluida en catálogo, integración de pasarelas de pago (Mercado Pago, tarjetas de crédito/débito), cálculo de costo de envío según código postal o retiro en local, y panel de administración de pedidos.",
       screenshots: [
         "img/herramientas_1.png",
         "img/herramientas_2.png"
       ],
       isPrivate: false,
-      accessNotes: "Plataforma de e-commerce abierta con carrito, procesamiento de pagos y gestión de envíos por CP.",
-      credentials: "Acceso libre a la tienda.",
+      accessNotes: "Plataforma de e-commerce de acceso libre y público, disponible en herramientaslibres.web.app.",
+      credentials: "Acceso libre en herramientaslibres.web.app",
+      liveUrl: "https://herramientaslibres.web.app",
       demoUrl: "https://wa.me/5491100000000?text=Hola,%20quisiera%20consultar%20por%20la%20plataforma%20de%20ecommerce"
     },
 
@@ -44,15 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Landing Page Corporativa — JL Constructora SRL",
       tags: ["HTML5 Semántico", "CSS3 Vanilla", "SEO B2B", "Mobile First"],
       desafio: "La constructora necesitaba presentar credenciales ante licitaciones y empresas de alto ticket. Su sitio web anterior era lento y no transmitía solvencia corporativa.",
-      solucion: "Implementé una web institucional ultra limpia sin librerías pesadas, destacando proyectos ejecutados, capacidad técnica y botón directo a presupuestos.",
+      solucion: "Implementamos una web institucional ultra limpia sin librerías pesadas, destacando proyectos ejecutados, capacidad técnica y botón directo a presupuestos.",
       screenshots: [
         "img/constructora_1.png",
         "img/constructora_2.png",
         "img/constructora_3.png"
       ],
       isPrivate: false,
-      accessNotes: "Sitio web de acceso público y optimizado para buscadores.",
-      credentials: "Acceso libre sin credenciales.",
+      accessNotes: "Sitio web de acceso público y optimizado para buscadores, disponible en www.jlsrl.com.ar.",
+      credentials: "Acceso libre en www.jlsrl.com.ar",
+      liveUrl: "https://www.jlsrl.com.ar",
       demoUrl: "https://wa.me/5491100000000?text=Hola,%20quisiera%20consultar%20por%20un%20sitio%20web%20institucional"
     },
 
@@ -61,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "NeoCalcu — Calculadora Neonatal & UCIN",
       tags: ["TypeScript", "PWA Offline", "Salud / Precisión", "UCIN"],
       desafio: "En unidades de terapia intensiva neonatal (UCIN), el cálculo de dosis por peso extremadamente bajo en recién nacidos requiere precisión matemática absoluta.",
-      solucion: "Desarrollé NeoCalcu, una PWA offline de uso bedside que calcula dosis de fármacos neonatales e infusiones con sliders interactivos y validación clínica.",
+      solucion: "Desarrollamos NeoCalcu, una PWA offline de uso bedside que calcula dosis de fármacos neonatales e infusiones con sliders interactivos y validación clínica.",
       screenshots: [
         "img/neocalcu_1.png",
         "img/neocalcu_2.png",
@@ -78,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "EGPediatria — Estoy de Guardia Pediatría",
       tags: ["JavaScript", "PWA Offline", "SAP / PALS", "Emergencias"],
       desafio: "En la guardia de pediatría, el cálculo rápido de inotrópicos, antiepilépticos y diluciones bajo estrés requiere una guía gráfica de acceso en segundos.",
-      solucion: "Desarrollé EGPediatria, una aplicación interactiva que genera instrucciones exactas de dilución, volúmenes a extraer por ampolla y tablas de dosificación según estándares SAP y PALS.",
+      solucion: "Desarrollamos EGPediatria, una aplicación interactiva que genera instrucciones exactas de dilución, volúmenes a extraer por ampolla y tablas de dosificación según estándares SAP y PALS.",
       screenshots: [
         "img/egpediatria_1.png",
         "img/egpediatria_2.png",
@@ -95,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "NeoMonitor — Simulador Virtual de Monitor Multiparamétrico",
       tags: ["Node.js", "WebSockets", "Realtime API", "Simulación Clínica"],
       desafio: "Los talleres de simulación médica y RCP neonatal (NRP) requieren monitores multiparamétricos costosos y difíciles de trasladar para entrenar a los profesionales.",
-      solucion: "Creé NeoMonitor, un software de simulación que convierte cualquier pantalla, Smart TV o tablet en monitor multiparamétrico interactivo, controlado en tiempo real desde el celular del instructor mediante WebSockets.",
+      solucion: "Creamos NeoMonitor, un software de simulación que convierte cualquier pantalla, Smart TV o tablet en monitor multiparamétrico interactivo, controlado en tiempo real desde el celular del instructor mediante WebSockets.",
       screenshots: [
         "img/neomonitor_1.png",
         "img/neomonitor_2.png"
@@ -211,11 +215,14 @@ document.addEventListener('DOMContentLoaded', () => {
         modalDemoLink.href = data.demoUrl;
 
         // Credentials Box
-        if (data.isPrivate) {
+        if (data.isPrivate || data.liveUrl) {
           demoCredentialsBox.style.display = 'block';
+          const liveLinkHtml = data.liveUrl
+            ? `<a href="${data.liveUrl}" target="_blank" rel="noopener" style="color:var(--accent-sky);">${data.liveUrl.replace('https://', '')}</a>`
+            : `<code>${data.credentials}</code>`;
           demoCredentialsBox.innerHTML = `
             <span style="display:block; font-size:0.75rem; color:var(--text-muted); margin-bottom:0.2rem;">🔑 Nivel de Acceso:</span>
-            <code>${data.credentials}</code>
+            ${liveLinkHtml}
           `;
         } else {
           demoCredentialsBox.style.display = 'none';
@@ -226,11 +233,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Real Screenshots Gallery Grid
         if (data.screenshots && data.screenshots.length > 0) {
-          modalGalleryGrid.innerHTML = data.screenshots.map(src => `
-            <a href="${src}" target="_blank" title="Haz clic para ver la captura completa en tamaño real">
+          modalGalleryGrid.innerHTML = data.screenshots.map((src, idx) => `
+            <button type="button" class="gallery-thumb" data-idx="${idx}" title="Hacé clic para ampliar">
               <img src="${src}" alt="Captura Real de la Web Actual" class="modal-gallery-img">
-            </a>
+            </button>
           `).join('');
+
+          modalGalleryGrid.querySelectorAll('.gallery-thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+              openLightbox(data.screenshots, Number(thumb.getAttribute('data-idx')));
+            });
+          });
         } else {
           modalGalleryGrid.innerHTML = `<p style="font-size:0.85rem; color:var(--text-muted);">Sin capturas adicionales necesarias para este desarrollo.</p>`;
         }
@@ -256,6 +269,60 @@ document.addEventListener('DOMContentLoaded', () => {
   modalCloseBottomBtn.addEventListener('click', closeModal);
   modalOverlay.addEventListener('click', (e) => {
     if (e.target === modalOverlay) closeModal();
+  });
+
+  // --- 4b. Image Lightbox (in-page, no new tabs) ---
+  const lightboxOverlay = document.getElementById('imageLightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+  const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+  const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
+  const lightboxNextBtn = document.getElementById('lightboxNextBtn');
+
+  let lightboxImages = [];
+  let lightboxIndex = 0;
+
+  function renderLightbox() {
+    lightboxImg.src = lightboxImages[lightboxIndex];
+    lightboxCounter.textContent = `${lightboxIndex + 1} / ${lightboxImages.length}`;
+    const multipleImages = lightboxImages.length > 1;
+    lightboxPrevBtn.style.display = multipleImages ? 'flex' : 'none';
+    lightboxNextBtn.style.display = multipleImages ? 'flex' : 'none';
+  }
+
+  function openLightbox(images, startIndex) {
+    lightboxImages = images;
+    lightboxIndex = startIndex;
+    renderLightbox();
+    lightboxOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightboxOverlay.classList.remove('active');
+    document.body.style.overflow = 'hidden'; // case study modal stays open behind it
+  }
+
+  lightboxPrevBtn.addEventListener('click', () => {
+    lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+    renderLightbox();
+  });
+
+  lightboxNextBtn.addEventListener('click', () => {
+    lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+    renderLightbox();
+  });
+
+  lightboxCloseBtn.addEventListener('click', closeLightbox);
+  lightboxOverlay.addEventListener('click', (e) => {
+    if (e.target === lightboxOverlay) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightboxOverlay.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxPrevBtn.click();
+    if (e.key === 'ArrowRight') lightboxNextBtn.click();
   });
 
   // --- 5. Mobile Menu Navigation ---
