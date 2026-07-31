@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: true,
       accessNotes: "Sistema enterprise privado de uso interno corporativo. Requiere autenticación previa para navegar las funciones del dashboard.",
       credentials: "Usuario prueba: demo@empresa.com | Clave: demo123",
-      demoUrl: "http://localhost:8080"
+      demoUrl: "https://flota-60b3c.web.app"
     },
 
     herramientas: {
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: false,
       accessNotes: "Plataforma de e-commerce abierta con carrito, procesamiento de pagos y gestión de envíos.",
       credentials: "Acceso libre a la tienda.",
-      demoUrl: "http://localhost:8080"
+      demoUrl: "https://herramientaslibres.web.app"
     },
 
     constructora: {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: false,
       accessNotes: "Sitio web de acceso público y optimizado para buscadores.",
       credentials: "Acceso libre sin credenciales.",
-      demoUrl: "http://localhost:8080"
+      demoUrl: "https://www.jlsrl.com.ar"
     },
 
     neocalcu: {
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: false,
       accessNotes: "Aplicación progresiva clínica instalable en dispositivos móviles.",
       credentials: "Acceso libre / PWA.",
-      demoUrl: "http://localhost:8080"
+      demoUrl: "https://diegoastein.github.io/neocalcu/"
     }
   };
 
