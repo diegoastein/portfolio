@@ -331,6 +331,34 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') lightboxNextBtn.click();
   });
 
+  // --- 4c. Contract Template Modal ---
+  const contractModal = document.getElementById('contractModal');
+  const openContractModalBtn = document.getElementById('openContractModalBtn');
+  const contractModalCloseBtn = document.getElementById('contractModalCloseBtn');
+  const contractModalCloseBottomBtn = document.getElementById('contractModalCloseBottomBtn');
+
+  function openContractModal() {
+    contractModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeContractModal() {
+    contractModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  if (openContractModalBtn) {
+    openContractModalBtn.addEventListener('click', openContractModal);
+    contractModalCloseBtn.addEventListener('click', closeContractModal);
+    contractModalCloseBottomBtn.addEventListener('click', closeContractModal);
+    contractModal.addEventListener('click', (e) => {
+      if (e.target === contractModal) closeContractModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && contractModal.classList.contains('active')) closeContractModal();
+    });
+  }
+
   // --- 5. Mobile Menu Navigation ---
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navMenu = document.getElementById('navMenu');

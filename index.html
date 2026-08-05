@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Desarrollo Web &amp; Software a Medida</title>
+  <title>DAStudio - Soluciones Web</title>
   <meta name="description" content="Selección de desarrollos web y aplicaciones a medida para optimizar procesos, ventas y gestión operativa.">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="512x512" href="img/favicon-512.png">
@@ -470,6 +470,11 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 5L2 22l5.25-1.38c1.46.8 3.1 1.22 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.8 14.15c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.82-.12-.42-.13-.96-.31-1.65-.6-2.91-1.26-4.8-4.17-4.95-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .9 2.14.07.15.12.32.02.52-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.26 1.63 2.04 1.12 1 2.06 1.31 2.36 1.46.29.15.46.13.63-.08.17-.2.72-.83.91-1.12.19-.29.38-.24.63-.14.26.1 1.66.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
             <span>Escribinos por WhatsApp</span>
           </a>
+
+          <button type="button" id="openContractModalBtn" class="btn-doc-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            <span>Ver Modelo de Contrato de Desarrollo Web</span>
+          </button>
         </div>
       </div>
     </section>
@@ -551,6 +556,141 @@
     </div>
     <button class="lightbox-arrow lightbox-next" id="lightboxNextBtn" aria-label="Siguiente">&rsaquo;</button>
     <div class="lightbox-counter" id="lightboxCounter">1 / 1</div>
+  </div>
+
+  <!-- CONTRACT TEMPLATE MODAL -->
+  <div class="modal-overlay" id="contractModal">
+    <div class="modal-window contract-modal-window">
+      <button class="modal-close" id="contractModalCloseBtn" aria-label="Cerrar">&times;</button>
+
+      <div class="modal-header">
+        <span class="modal-badge">Transparencia Contractual</span>
+        <h2 class="modal-title">Modelo de Contrato de Desarrollo Web</h2>
+        <p style="font-size:0.85rem; margin-top:0.3rem;">Así definimos alcance, plazos, pagos y mantenimiento antes de empezar cualquier proyecto.</p>
+      </div>
+
+      <div class="modal-body contract-modal-body">
+        <article class="contract-doc">
+          <h3>CONTRATO MARCO DE DESARROLLO WEB</h3>
+          <p>En la ciudad de [Ciudad], a los [Día] días del mes de [Mes] de [Año], entre:</p>
+          <p><strong>EL DESARROLLADOR:</strong> [Tu Nombre / Nombre de tu Emprendimiento], DNI/CUIT N° [Tu CUIT], con domicilio en [Tu Dirección], correo electrónico: [Tu Email] (en adelante, "EL DESARROLLADOR"); y</p>
+          <p><strong>EL CLIENTE:</strong> [Nombre de la Empresa o Cliente], DNI/CUIT N° [CUIT del Cliente], con domicilio en [Dirección del Cliente], correo electrónico: [Email del Cliente], representado en este acto por [Nombre del Representante] (en adelante, "EL CLIENTE").</p>
+          <p>Ambas partes acuerdan celebrar el presente Contrato Marco de Desarrollo Web, sujeto a las siguientes cláusulas:</p>
+
+          <h4>PRIMERA: OBJETO</h4>
+          <p>EL DESARROLLADOR se compromete a realizar el diseño y desarrollo de una aplicación web / sitio web para EL CLIENTE (en adelante, el "Proyecto"), según las especificaciones técnicas y requerimientos detallados en la Propuesta Comercial / Alcance del Proyecto N° [Número de propuesta/presupuesto], la cual forma parte integrante de este contrato.</p>
+
+          <h4>SEGUNDA: ALCANCE Y MODIFICACIONES (SCOPE CREEP)</h4>
+          <ol>
+            <li>El alcance del Proyecto queda delimitado exclusivamente a lo estipulado en la propuesta acordada.</li>
+            <li>Cualquier funcionalidad, página, diseño o integración no especificada explícitamente se considerará fuera de alcance y requerirá la emisión de un presupuesto adicional y la extensión de los plazos de entrega.</li>
+          </ol>
+
+          <h4>TERCERA: PLAZOS Y ENTREGAS</h4>
+          <ol>
+            <li>El plazo estimado para la ejecución del Proyecto será de [Cantidad] semanas / días hábiles, contados a partir de la recepción del pago del anticipo y de la totalidad del material inicial requerido a EL CLIENTE.</li>
+            <li>Dependencia de información: el cronograma de trabajo depende de la entrega oportuna por parte de EL CLIENTE de textos, imágenes, accesos, logos e información necesaria. En caso de demoras por parte de EL CLIENTE superiores a [5/10] días hábiles en entregar insumos o responder revisiones, los plazos del proyecto se pausarán automáticamente por el mismo período de retraso.</li>
+          </ol>
+
+          <h4>CUARTA: PROCESO DE REVISIÓN Y APROBACIÓN</h4>
+          <ol>
+            <li>EL DESARROLLADOR presentará hasta un máximo de [Número, ej: 2] rondas de revisiones sobre los entregables acordados.</li>
+            <li>Las correcciones deberán ser solicitadas por EL CLIENTE de manera consolidada en un único documento o comunicación formal por correo electrónico dentro de los [5] días hábiles posteriores a la entrega del avance.</li>
+          </ol>
+
+          <h4>QUINTA: PRECIO Y FORMA DE PAGO</h4>
+          <ol>
+            <li>El precio total por el desarrollo se fija en la suma de [Monto] [ARS/USD].</li>
+            <li>Esquema de pagos:
+              <ul>
+                <li>50% a la firma del presente contrato en concepto de anticipo para iniciar los trabajos.</li>
+                <li>50% contra entrega del proyecto listo para su puesta en producción.</li>
+              </ul>
+            </li>
+            <li>El incumplimiento o demora en los pagos suspenderá de inmediato los trabajos del Proyecto.</li>
+          </ol>
+
+          <h4>SEXTA: PROPIEDAD INTELECTUAL Y PROPIEDAD DE LOS DATOS</h4>
+          <ol>
+            <li>Una vez cancelado el 100% del precio pactado, EL DESARROLLADOR cede a EL CLIENTE los derechos de explotación sobre el código fuente final desarrollado específicamente para el Proyecto.</li>
+            <li>Propiedad de la información: todos los datos, registros de usuarios, contenidos y base de datos generados por el uso de la aplicación son de exclusiva propiedad de EL CLIENTE.</li>
+            <li>EL DESARROLLADOR conserva el derecho de exhibir el trabajo finalizado en su portafolio profesional, sitio web o redes sociales con fines promocionales, salvo acuerdo explícito de confidencialidad en contrario.</li>
+          </ol>
+
+          <h4>SÉPTIMA: FIRMA ELECTRÓNICA Y JURISDICCIÓN</h4>
+          <ol>
+            <li>Las partes aceptan expresamente la celebración y firma del presente contrato mediante herramientas de firma electrónica (ZapSign, DocuSign o similar), reconociendo plena validez jurídica a la evidencia digital generada (IP, correo electrónico, sello de tiempo) conforme al Código Civil y Comercial de la Nación Argentina.</li>
+            <li>Para todos los efectos legales derivados del presente acuerdo, las partes se someten a la jurisdicción de los Tribunales Ordinarios en lo Comercial de [Ciudad / Provincia], renunciando a cualquier otro fuero o jurisdicción.</li>
+          </ol>
+
+          <h3>ANEXO A: SERVICIOS RECURRENTES<br>(HOSTING, INFRAESTRUCTURA Y MANTENIMIENTO)</h3>
+          <p>El presente Anexo complementa el Contrato Marco de Desarrollo Web y regula la prestación de servicios recurrentes de infraestructura en la nube, alojamiento y soporte técnico por parte de EL DESARROLLADOR a favor de EL CLIENTE.</p>
+
+          <h4>1. PLAN DE SERVICIO ELEGIDO Y SERVICIOS INCLUIDOS</h4>
+          <p>EL CLIENTE contrata el plan de servicios: [Nombre del Plan: ej. Infraestructura Cloud + Mantenimiento], que incluye:</p>
+          <ul>
+            <li>Alojamiento y servicios cloud administrados: hosting de la aplicación y gestión de servicios de backend / base de datos en la infraestructura en la nube administrada por EL DESARROLLADOR (Firebase / Google Cloud / similar).</li>
+            <li>Monitoreo de disponibilidad (uptime) y seguridad de los servidores.</li>
+            <li>Copias de seguridad (backups) periódicas de la base de datos.</li>
+            <li>Actualizaciones de seguridad de librerías, dependencias y servicios.</li>
+            <li>Hasta [X] horas mensuales de soporte técnico para corrección de errores o consultas sobre el sistema.</li>
+          </ul>
+
+          <h4>2. INFRAESTRUCTURA DE NUBE Y MIGRACIÓN DE DATOS</h4>
+          <ol>
+            <li>Administración de cuenta: la infraestructura y el proyecto en la nube (Firebase/Google Cloud) permanecerán alojados dentro de la cuenta administrada de EL DESARROLLADOR para garantizar la continuidad operativa del servicio sin requerir configuraciones técnicas por parte de EL CLIENTE.</li>
+            <li>Rescisión y entrega de datos: en caso de finalización del servicio de mantenimiento por cualquier causa:
+              <ul>
+                <li>EL DESARROLLADOR entregará a EL CLIENTE una exportación completa de su base de datos y archivos (backup/dump) en formato estándar (JSON / CSV) dentro de los 10 días hábiles posteriores a la baja.</li>
+                <li>En caso de que EL CLIENTE disponga de su propia cuenta de Google Cloud / Firebase y solicite la transferencia directa del proyecto, EL DESARROLLADOR realizará la migración del proyecto de infraestructura, pudiendo facturar el costo por las horas de asistencia técnica que requiera dicho traspaso.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h4>3. EXCLUSIONES Y LÍMITES DE USO</h4>
+          <ol>
+            <li>El servicio de mantenimiento NO incluye:
+              <ul>
+                <li>Creación de nuevas funciones, pantallas, secciones o rediseño del sistema.</li>
+                <li>Reparación de fallas o problemas causados por la manipulación del sistema por parte de terceros no autorizados.</li>
+              </ul>
+            </li>
+            <li>Límites de consumo: el abono mensual incluye un tráfico y uso de base de datos correspondiente a la operatoria normal descrita en la propuesta. En caso de que el proyecto experimente un crecimiento extraordinario en volumen de usuarios o consumo de recursos en la nube (bandwidth, lecturas/escrituras en base de datos), EL DESARROLLADOR lo notificará a EL CLIENTE para adecuar el canon mensual.</li>
+          </ol>
+
+          <h4>4. DOMINIO E INFRAESTRUCTURA DE TERCEROS</h4>
+          <ol>
+            <li>La titularidad del nombre de dominio (registrado en NIC Argentina u otro registrador) pertenece a EL CLIENTE.</li>
+            <li>EL DESARROLLADOR no asume responsabilidad por caídas masivas de los proveedores globales de infraestructura en la nube (ej. Google Cloud Platform / Firebase) o ciberataques de escala mayor fuera de su control técnico.</li>
+          </ol>
+
+          <h4>5. CANON MENSUAL Y AJUSTE DE PRECIOS</h4>
+          <ol>
+            <li>El costo mensual del servicio administrado es de [Monto] [ARS/USD], abonable del 1 al 10 de cada mes por adelantado.</li>
+            <li>Los valores fijados en Pesos Argentinos (ARS) se actualizarán de forma [trimestral / semestral] tomando como referencia la variación del Índice de Precios al Consumidor (IPC) publicado por el INDEC, o el tipo de cambio acordado si se pactó en divisa extranjera.</li>
+          </ol>
+
+          <h4>6. DURACIÓN Y CANCELACIÓN</h4>
+          <ol>
+            <li>El presente anexo tendrá una duración mínima de [3 / 6] meses y se renovará automáticamente por períodos iguales.</li>
+            <li>Cualquiera de las partes podrá dar de baja el servicio notificando por escrito/email con al menos 30 días de anticipación a la fecha de vencimiento del período mensual contratado.</li>
+          </ol>
+
+          <div class="contract-signatures">
+            <div><span>EL DESARROLLADOR</span><br>[Nombre / Firma Digital]</div>
+            <div><span>EL CLIENTE</span><br>[Nombre del Representante / Firma Digital]</div>
+          </div>
+          <p style="font-size:0.75rem; margin-top:1rem;">Firmas vía plataforma de firma electrónica (ZapSign, DocuSign o similar).</p>
+        </article>
+      </div>
+
+      <div class="modal-footer">
+        <a href="docs/Contrato_Marco_Desarrollo_Web_y_Anexo.pdf" download class="btn btn-card btn-sm">
+          <span>Descargar PDF</span>
+        </a>
+        <button class="btn btn-secondary btn-sm" id="contractModalCloseBottomBtn">Cerrar</button>
+      </div>
+    </div>
   </div>
 
   <!-- Floating WhatsApp Button -->
