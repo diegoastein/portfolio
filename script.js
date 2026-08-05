@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: true,
       accessNotes: "Sistema enterprise privado de uso interno corporativo. Debido a la confidencialidad de los datos operativos de la empresa, se exhiben las capturas directas de la aplicación actual.",
       credentials: "Modo Privado / Datos de demostración bajo solicitud.",
-      demoUrl: "https://www.instagram.com/DAStudio2026/"
+      demoUrl: "https://wa.me/5491125395150"
     },
 
     herramientas: {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       accessNotes: "Plataforma de e-commerce de acceso libre y público, disponible en herramientaslibres.web.app.",
       credentials: "Acceso libre en herramientaslibres.web.app",
       liveUrl: "https://herramientaslibres.web.app",
-      demoUrl: "https://www.instagram.com/DAStudio2026/"
+      demoUrl: "https://wa.me/5491125395150"
     },
 
     constructora: {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       accessNotes: "Sitio web de acceso público y optimizado para buscadores, disponible en www.jlsrl.com.ar.",
       credentials: "Acceso libre en www.jlsrl.com.ar",
       liveUrl: "https://www.jlsrl.com.ar",
-      demoUrl: "https://www.instagram.com/DAStudio2026/"
+      demoUrl: "https://wa.me/5491125395150"
     },
 
     neocalcu: {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: false,
       accessNotes: "Aplicación clínica progresiva instalable en dispositivos móviles.",
       credentials: "Acceso libre / PWA.",
-      demoUrl: "https://www.instagram.com/DAStudio2026/"
+      demoUrl: "https://wa.me/5491125395150"
     },
 
     egpediatria: {
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: false,
       accessNotes: "Herramienta médica clínica interactiva de acceso público.",
       credentials: "Acceso libre.",
-      demoUrl: "https://www.instagram.com/DAStudio2026/"
+      demoUrl: "https://wa.me/5491125395150"
     },
 
     neomonitor: {
@@ -107,9 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
       isPrivate: false,
       accessNotes: "Plataforma de simulación interactiva sin instalación previa.",
       credentials: "Acceso libre a la demo.",
-      demoUrl: "https://www.instagram.com/DAStudio2026/"
+      demoUrl: "https://wa.me/5491125395150"
     }
   };
+
+  // Prefill each project's WhatsApp message with its title
+  Object.values(caseStudiesData).forEach(project => {
+    const message = `Hola, quiero consultar por el proyecto: ${project.title}`;
+    project.demoUrl = `${project.demoUrl}?text=${encodeURIComponent(message)}`;
+  });
 
   // --- 2. Interactive Card Gallery Sliders ---
   const cardSliders = document.querySelectorAll('.card-gallery-slider');
